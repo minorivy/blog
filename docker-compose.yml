@@ -17,7 +17,7 @@ services:
       - 443:443
       networks:
       - app-network
-      command: /bin/sh -c "sudo su www-data && apt-get update; apt-get install -y vim; nginx -g 'daemon off;' "
+      command: /bin/sh -c "apt-get update; apt-get install -y vim; nginx -g 'daemon off;' "
 
    db:
       image: mariadb:10.4
