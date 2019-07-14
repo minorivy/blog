@@ -2,7 +2,7 @@
   "name": "roots/bedrock",
   "type": "project",
   "license": "MIT",
-  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "description": "bedrock arranged version",
   "homepage": "https://roots.io/bedrock/",
   "authors": [
     {
@@ -17,7 +17,6 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
@@ -39,7 +38,8 @@
     "oscarotero/env": "^1.2.0",
     "roots/wordpress": "5.2.2",
     "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.0.0"
+	"roots/wp-password-bcrypt": "1.0.0",
+	"wpackagist-plugin/disable-json-api": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4.2",
@@ -55,7 +55,7 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
+      "test -f .env || php -r \"copy('.env.example', '.env');\""
     ],
     "test": [
       "phpcs"

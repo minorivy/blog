@@ -7,8 +7,9 @@ web/app/uploads/*
 !web/app/uploads/.gitkeep
 
 # WordPress
-web/wp
-web/column
+web/wp/*
+web/column/*
+!web/column/.gitkeep
 web/.htaccess
 
 # Dotenv
@@ -34,3 +35,6 @@ docker/mysql/data/*
 
 # settings by os
 .DS_Store
+
+# node modules
+node_modules
