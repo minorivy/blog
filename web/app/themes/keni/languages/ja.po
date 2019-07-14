@@ -1,0 +1,1660 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 賢威8.0\n"
+"POT-Creation-Date: 2019-06-18 13:11+0900\n"
+"PO-Revision-Date: 2019-06-18 13:13+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: comments.php:46
+msgid "Previous Comments"
+msgstr "前のコメント"
+
+#: comments.php:49
+msgid "Next Comments"
+msgstr "次のコメント"
+
+#: comments.php:64
+msgid "Name"
+msgstr "名前"
+
+#: comments.php:65
+msgid "Email"
+msgstr "メールアドレス"
+
+#: comments.php:66
+msgid "Website"
+msgstr "ウェブサイト"
+
+#: comments.php:68
+msgctxt "noun"
+msgid "Comment"
+msgstr "コメント"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: keni-html-parts/keni_after_nav-category.php:34
+#: keni-html-parts/keni_after_nav-post.php:34
+#: keni-html-parts/keni_after_nav.php:34
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "続きを読む <span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: keni-html-parts/keni_after_nav-category.php:45
+#: keni-html-parts/keni_after_nav-post.php:45
+#: keni-html-parts/keni_after_nav.php:45
+#: template-parts/content-attachment.php:40 template-parts/content.php:33
+msgid "Pages:"
+msgstr "ページ:"
+
+#: keni/common/keni-front.php:152
+msgid "prev"
+msgstr "前へ"
+
+#: keni/common/keni-front.php:165
+msgid "next"
+msgstr "次へ"
+
+#: keni/common/keni-setup.php:39
+msgid "Global nav"
+msgstr "グローバルナビゲーション"
+
+#: keni/common/keni-setup.php:103
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: keni/common/keni-setup.php:105 keni/common/keni-setup.php:116
+#: keni/common/keni-setup.php:127 keni/common/keni-setup.php:138
+#: keni/common/keni-setup.php:149 keni/common/keni-setup.php:160
+#: keni/common/keni-setup.php:171 keni/common/keni-setup.php:182
+#: keni/common/keni-setup.php:193 keni/common/keni-setup.php:204
+#: keni/common/keni-setup.php:215
+msgid "Add widgets here."
+msgstr "ウィジェットをここに追加。"
+
+#: keni/common/keni-setup.php:114
+msgid "Before content for Top Page"
+msgstr "トップページのコンテンツ前エリア"
+
+#: keni/common/keni-setup.php:125
+msgid "After content for Top Page"
+msgstr "トップページのコンテンツ後エリア"
+
+#: keni/common/keni-setup.php:136
+msgid "Before content for Singlar"
+msgstr "投稿・固定ページのコンテンツ前エリア"
+
+#: keni/common/keni-setup.php:147
+msgid "CTA Area"
+msgstr "CTAエリア"
+
+#: keni/common/keni-setup.php:158
+msgid "After content for Singlar"
+msgstr "投稿・固定ページのコンテンツ後エリア"
+
+#: keni/common/keni-setup.php:169
+msgid "Before content for Archive"
+msgstr "一覧ページの前"
+
+#: keni/common/keni-setup.php:180
+msgid "After content for Archive"
+msgstr "一覧ページの後"
+
+#: keni/common/keni-setup.php:191 keni/module/keni-layout/keni-layout.php:134
+#: keni/module/keni-layout/keni-layout.php:534
+msgid "Footer 01"
+msgstr "フッター1"
+
+#: keni/common/keni-setup.php:202 keni/module/keni-layout/keni-layout.php:149
+#: keni/module/keni-layout/keni-layout.php:535
+msgid "Footer 02"
+msgstr "フッター2"
+
+#: keni/common/keni-setup.php:213 keni/module/keni-layout/keni-layout.php:164
+#: keni/module/keni-layout/keni-layout.php:536
+msgid "Footer 03"
+msgstr "フッター3"
+
+#: keni/common/keni.php:27
+msgid "Please select"
+msgstr "選択してください"
+
+#: keni/common/keni.php:33
+msgid "Select"
+msgstr "選択"
+
+#: keni/common/keni.php:100 keni/module/keni-setting/keni-setting.php:6
+msgid "Keni Settings"
+msgstr "賢威の設定"
+
+#: keni/common/keni.php:387 keni/common/keni.php:422
+#: keni/module/keni-setting/keni-setting.php:444
+#: keni/module/keni-setting/keni-setting.php:465
+#: keni/module/keni-sns/keni-sns.php:730 keni/module/keni-sns/keni-sns.php:835
+msgid "Upload Image"
+msgstr "画像をアップロード"
+
+#: keni/common/keni.php:388 keni/module/keni-setting/keni-setting.php:445
+#: keni/module/keni-setting/keni-setting.php:466
+#: keni/module/keni-sns/keni-sns.php:731 keni/module/keni-sns/keni-sns.php:836
+msgid "Clear"
+msgstr "クリア"
+
+#: keni/common/keni.php:437 keni/common/keni.php:447 keni/common/keni.php:455
+#: keni/common/keni.php:528 keni/module/keni-setting/keni-setting.php:212
+msgid "Image"
+msgstr "画像"
+
+#: keni/common/keni.php:438 keni/module/keni-setting/keni-setting.php:213
+msgid "Background Image"
+msgstr "背景画像"
+
+#: keni/common/keni.php:439 keni/module/keni-setting/keni-setting.php:214
+msgid "Movie"
+msgstr "動画"
+
+#: keni/common/keni.php:440 keni/module/keni-setting/keni-setting.php:215
+msgid "Slider"
+msgstr "スライダー"
+
+#: keni/common/keni.php:441 keni/module/keni-setting/keni-setting.php:216
+msgid "Full Screen"
+msgstr "全画面表示"
+
+#: keni/common/keni.php:445 keni/common/keni.php:453 keni/common/keni.php:479
+msgid "Display width"
+msgstr "表示幅"
+
+#: keni/common/keni.php:449 keni/common/keni.php:457 keni/common/keni.php:472
+#: keni/common/keni.php:530 keni/common/keni.php:552
+msgid "Image for mobile"
+msgstr "モバイル用画像"
+
+#: keni/common/keni.php:460 keni/common/keni.php:475 keni/common/keni.php:533
+msgid "Text"
+msgstr "テキスト"
+
+#: keni/common/keni.php:463
+msgid "Text position"
+msgstr "テキストの位置"
+
+#: keni/common/keni.php:468
+msgid "Embed code"
+msgstr "埋め込みコード"
+
+#: keni/common/keni.php:470
+msgid "mp4"
+msgstr "mp4ファイル"
+
+#: keni/common/keni.php:496
+msgid "Add image"
+msgstr "画像追加"
+
+#: keni/common/keni.php:551
+msgid "Image "
+msgstr "画像"
+
+#: keni/common/keni.php:553
+msgid "Link URL"
+msgstr "リンクURL"
+
+#: keni/common/keni.php:554
+msgid "Link Target"
+msgstr ""
+
+#: keni/common/keni.php:779
+#, php-format
+msgid "View all posts in %s"
+msgstr "%s の全投稿を表示"
+
+#: keni/common/keni.php:817 keni/common/keni.php:846 keni/common/keni.php:1030
+#: keni/common/keni.php:1041 keni/common/keni.php:1052
+msgid "page"
+msgstr "ページ"
+
+#: keni/common/keni.php:867
+#, php-format
+msgid "Search Result for %s"
+msgstr "「%s」の検索結果"
+
+#: keni/common/keni.php:871
+msgid "Sorry, but you are looking for something that isn&#8217;t here."
+msgstr "お探しのコンテンツは見つかりません。"
+
+#: keni/common/keni.php:885 keni/common/keni.php:892 keni/common/keni.php:895
+#: keni/common/keni.php:900 keni/common/keni.php:903 keni/common/keni.php:906
+#: keni/common/keni.php:911 keni/common/keni.php:912 keni/common/keni.php:915
+#: keni/common/keni.php:918 keni/common/keni.php:927
+#: keni/module/keni-archive/keni-archive.php:144
+#, php-format
+msgid "Archive List for %s"
+msgstr "「%s」の記事一覧"
+
+#: keni/common/keni.php:892 keni/common/keni.php:895 keni/common/keni.php:900
+#: keni/common/keni.php:911 keni/module/keni-seo/keni-seo.php:611
+msgid "Y"
+msgstr "Y年"
+
+#: keni/common/keni.php:903 keni/common/keni.php:906 keni/common/keni.php:912
+msgid "F Y"
+msgstr "Y年m月"
+
+#: keni/common/keni.php:915 keni/common/keni.php:918
+msgid "F j, Y"
+msgstr "Y年m月j日"
+
+#: keni/common/keni.php:922
+msgid "Archive List for authors"
+msgstr "著者のアーカイブリスト"
+
+#: keni/module/keni-archive/keni-archive.php:23
+#: keni/module/keni-archive/keni-archive.php:39
+msgid "Page Title"
+msgstr "ページのタイトル"
+
+#. translators: Author archive title. 1: Author name
+#: keni/module/keni-archive/keni-archive.php:75
+#, php-format
+msgid "Author: %s"
+msgstr "著者：%s"
+
+#. translators: Yearly archive title. 1: Year
+#: keni/module/keni-archive/keni-archive.php:78
+#, php-format
+msgid "Year: %s"
+msgstr "%s年"
+
+#: keni/module/keni-archive/keni-archive.php:78
+#, fuzzy
+#| msgid "Y"
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y年"
+
+#. translators: Monthly archive title. 1: Month name and year
+#: keni/module/keni-archive/keni-archive.php:81
+#, php-format
+msgid "Month: %s"
+msgstr "%s月"
+
+#: keni/module/keni-archive/keni-archive.php:81
+#, fuzzy
+#| msgid "F Y"
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "Y年m月"
+
+#. translators: Daily archive title. 1: Date
+#: keni/module/keni-archive/keni-archive.php:84
+#, php-format
+msgid "Day: %s"
+msgstr "%s日"
+
+#: keni/module/keni-archive/keni-archive.php:84
+#, fuzzy
+#| msgid "F j, Y"
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "Y年m月j日"
+
+#: keni/module/keni-archive/keni-archive.php:87
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "アサイド"
+
+#: keni/module/keni-archive/keni-archive.php:89
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "ギャラリー"
+
+#: keni/module/keni-archive/keni-archive.php:91
+#, fuzzy
+#| msgid "Image"
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "画像"
+
+#: keni/module/keni-archive/keni-archive.php:93
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "動画"
+
+#: keni/module/keni-archive/keni-archive.php:95
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "引用"
+
+#: keni/module/keni-archive/keni-archive.php:97
+#, fuzzy
+#| msgid "Link URL"
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "リンクURL"
+
+#: keni/module/keni-archive/keni-archive.php:99
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "ステータス"
+
+#: keni/module/keni-archive/keni-archive.php:101
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "オーディオ"
+
+#: keni/module/keni-archive/keni-archive.php:103
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "チャット"
+
+#. translators: Post type archive title. 1: Post type name
+#: keni/module/keni-archive/keni-archive.php:107
+#, fuzzy, php-format
+#| msgid "Archive List for %s"
+msgid "Archives: %s"
+msgstr "「%s」の記事一覧"
+
+#. translators: Taxonomy term archive title. 1: Taxonomy singular name, 2: Current taxonomy term
+#: keni/module/keni-archive/keni-archive.php:111
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: keni/module/keni-archive/keni-archive.php:113
+#, fuzzy
+#| msgid "Archive Page"
+msgid "Archives"
+msgstr "一覧ページ"
+
+#: keni/module/keni-archive/keni-archive.php:172
+#: keni/module/keni-archive/keni-archive.php:188
+msgid "Page Contents"
+msgstr "ページコンテンツ"
+
+#: keni/module/keni-common-content/keni-common-content.php:20
+#: keni/module/keni-common-content/keni-common-content.php:42
+msgid "Short Code"
+msgstr "ショートコード"
+
+#: keni/module/keni-common-content/keni-common-content.php:21
+msgid "Show button on Visual Editor"
+msgstr "ビジュアルエディタにボタンを表示"
+
+#: keni/module/keni-common-content/keni-common-content.php:32
+#: keni/module/keni-common-content/keni-common-content.php:94
+#: keni/module/keni-layout/keni-layout.php:77
+#: keni/module/keni-layout/keni-layout.php:123
+#: keni/module/keni-layout/keni-layout.php:138
+#: keni/module/keni-layout/keni-layout.php:153
+#: keni/module/keni-layout/keni-layout.php:168
+#: keni/module/keni-layout/keni-layout.php:183
+#: keni/module/keni-layout/keni-layout.php:246
+#: keni/module/keni-layout/keni-layout.php:280
+#: keni/module/keni-layout/keni-layout.php:314
+#: keni/module/keni-layout/keni-layout.php:348
+#: keni/module/keni-layout/keni-layout.php:382
+#: keni/module/keni-layout/keni-layout.php:508
+#: keni/module/keni-layout/keni-layout.php:512
+#: keni/module/keni-layout/keni-layout.php:516
+#: keni/module/keni-layout/keni-layout.php:520
+#: keni/module/keni-post/keni-post.php:78
+#: keni/module/keni-post/keni-post.php:101
+#: keni/module/keni-post/keni-post.php:128
+#: keni/module/keni-post/keni-post.php:136
+#: keni/module/keni-post/keni-post.php:306
+#: keni/module/keni-post/keni-post.php:430
+#: keni/module/keni-post/keni-post.php:961
+#: keni/module/keni-post/keni-post.php:1050
+#: keni/module/keni-seo/keni-seo.php:193
+msgid "Display"
+msgstr "表示する"
+
+#: keni/module/keni-common-content/keni-common-content.php:32
+#: keni/module/keni-common-content/keni-common-content.php:93
+#: keni/module/keni-layout/keni-layout.php:78
+#: keni/module/keni-layout/keni-layout.php:124
+#: keni/module/keni-layout/keni-layout.php:139
+#: keni/module/keni-layout/keni-layout.php:154
+#: keni/module/keni-layout/keni-layout.php:169
+#: keni/module/keni-layout/keni-layout.php:184
+#: keni/module/keni-layout/keni-layout.php:247
+#: keni/module/keni-layout/keni-layout.php:281
+#: keni/module/keni-layout/keni-layout.php:315
+#: keni/module/keni-layout/keni-layout.php:349
+#: keni/module/keni-layout/keni-layout.php:383
+#: keni/module/keni-layout/keni-layout.php:509
+#: keni/module/keni-layout/keni-layout.php:513
+#: keni/module/keni-layout/keni-layout.php:517
+#: keni/module/keni-layout/keni-layout.php:521
+#: keni/module/keni-post/keni-post.php:77
+#: keni/module/keni-post/keni-post.php:85
+#: keni/module/keni-post/keni-post.php:100
+#: keni/module/keni-post/keni-post.php:127
+#: keni/module/keni-post/keni-post.php:135
+#: keni/module/keni-post/keni-post.php:307
+#: keni/module/keni-post/keni-post.php:429
+#: keni/module/keni-post/keni-post.php:960
+#: keni/module/keni-post/keni-post.php:1049
+#: keni/module/keni-seo/keni-seo.php:194
+msgid "Not Display"
+msgstr "表示しない"
+
+#: keni/module/keni-common-content/keni-common-content.php:41
+msgid "Title"
+msgstr "タイトル"
+
+#: keni/module/keni-common-content/keni-common-content.php:43
+#: keni/module/keni-common-content/keni-common-content.php:77
+msgid "Show button on Editor"
+msgstr "エディタにボタンを表示"
+
+#: keni/module/keni-common-content/keni-common-content.php:44
+msgid "Date"
+msgstr "日付"
+
+#: keni/module/keni-common-content/keni-common-content.php:129
+msgid "This Short Code"
+msgstr "ショートコード"
+
+#: keni/module/keni-common-content/keni-common-content.php:140
+msgid "<p>Use This Short Code</p>"
+msgstr "<p>コピーしてショートコードを使用してください</p>"
+
+#: keni/module/keni-layout/keni-layout.php:46
+#: keni/module/keni-layout/keni-layout.php:57
+#: keni/module/keni-layout/keni-layout.php:101
+#: keni/module/keni-layout/keni-layout.php:434
+#: keni/module/keni-layout/keni-layout.php:694
+#: keni/module/keni-layout/keni-layout.php:718
+msgid "Layout"
+msgstr "レイアウト"
+
+#: keni/module/keni-layout/keni-layout.php:61
+#: keni/module/keni-layout/keni-layout.php:106
+#: keni/module/keni-layout/keni-layout.php:229
+#: keni/module/keni-layout/keni-layout.php:263
+#: keni/module/keni-layout/keni-layout.php:297
+#: keni/module/keni-layout/keni-layout.php:331
+#: keni/module/keni-layout/keni-layout.php:365
+#: keni/module/keni-layout/keni-layout.php:410
+#: keni/module/keni-layout/keni-layout.php:502
+#: keni/module/keni-layout/keni-layout.php:685
+#: keni/module/keni-layout/keni-layout.php:708
+msgid "1 Column"
+msgstr "1カラム"
+
+#: keni/module/keni-layout/keni-layout.php:62
+#: keni/module/keni-layout/keni-layout.php:107
+#: keni/module/keni-layout/keni-layout.php:230
+#: keni/module/keni-layout/keni-layout.php:264
+#: keni/module/keni-layout/keni-layout.php:298
+#: keni/module/keni-layout/keni-layout.php:332
+#: keni/module/keni-layout/keni-layout.php:366
+#: keni/module/keni-layout/keni-layout.php:411
+#: keni/module/keni-layout/keni-layout.php:503
+#: keni/module/keni-layout/keni-layout.php:686
+#: keni/module/keni-layout/keni-layout.php:709
+msgid "2 Column"
+msgstr "2カラム"
+
+#: keni/module/keni-layout/keni-layout.php:63
+#: keni/module/keni-layout/keni-layout.php:108
+#: keni/module/keni-layout/keni-layout.php:231
+#: keni/module/keni-layout/keni-layout.php:265
+#: keni/module/keni-layout/keni-layout.php:299
+#: keni/module/keni-layout/keni-layout.php:333
+#: keni/module/keni-layout/keni-layout.php:367
+#: keni/module/keni-layout/keni-layout.php:504
+#: keni/module/keni-layout/keni-layout.php:687
+#: keni/module/keni-layout/keni-layout.php:710
+msgid "2 Column Reverse"
+msgstr "2カラムリバース"
+
+#: keni/module/keni-layout/keni-layout.php:73
+#: keni/module/keni-layout/keni-layout.php:118
+#: keni/module/keni-layout/keni-layout.php:241
+#: keni/module/keni-layout/keni-layout.php:275
+#: keni/module/keni-layout/keni-layout.php:309
+#: keni/module/keni-layout/keni-layout.php:343
+#: keni/module/keni-layout/keni-layout.php:377
+msgid "Side Bar for 1 Column"
+msgstr "1カラムのときに表示するサイドバー"
+
+#: keni/module/keni-layout/keni-layout.php:90
+msgid "TopPage Layout"
+msgstr "トップページのレイアウト"
+
+#: keni/module/keni-layout/keni-layout.php:105
+#: keni/module/keni-layout/keni-layout.php:122
+#: keni/module/keni-layout/keni-layout.php:228
+#: keni/module/keni-layout/keni-layout.php:245
+#: keni/module/keni-layout/keni-layout.php:262
+#: keni/module/keni-layout/keni-layout.php:279
+#: keni/module/keni-layout/keni-layout.php:296
+#: keni/module/keni-layout/keni-layout.php:313
+#: keni/module/keni-layout/keni-layout.php:330
+#: keni/module/keni-layout/keni-layout.php:347
+#: keni/module/keni-layout/keni-layout.php:364
+#: keni/module/keni-layout/keni-layout.php:381
+#: keni/module/keni-layout/keni-layout.php:501
+#: keni/module/keni-layout/keni-layout.php:507
+#: keni/module/keni-layout/keni-layout.php:684
+#: keni/module/keni-layout/keni-layout.php:707
+msgid "Use Default Layout"
+msgstr "デフォルトのレイアウトを使用する"
+
+#: keni/module/keni-layout/keni-layout.php:179
+msgid "Global Menu"
+msgstr "グローバルメニュー"
+
+#: keni/module/keni-layout/keni-layout.php:212
+msgid "Archives Layout"
+msgstr "記事一覧のレイアウト"
+
+#: keni/module/keni-layout/keni-layout.php:224
+#: keni/module/keni-seo/keni-seo.php:151
+msgid "Category Page"
+msgstr "カテゴリページ"
+
+#: keni/module/keni-layout/keni-layout.php:258
+#: keni/module/keni-seo/keni-seo.php:153
+msgid "Tag Page"
+msgstr "タグページ"
+
+#: keni/module/keni-layout/keni-layout.php:292
+msgid "年月日ページ"
+msgstr "年月日ページ"
+
+#: keni/module/keni-layout/keni-layout.php:326
+msgid "投稿者ページ"
+msgstr "投稿者ページ"
+
+#: keni/module/keni-layout/keni-layout.php:360
+msgid "Archives Search"
+msgstr "一覧検索"
+
+#: keni/module/keni-layout/keni-layout.php:395
+msgid "Header Layout"
+msgstr "ヘッダーレイアウト"
+
+#: keni/module/keni-layout/keni-layout.php:406
+msgid "Layout (Mobile Only)"
+msgstr "レイアウト（モバイル時のみ）"
+
+#: keni/module/keni-layout/keni-layout.php:423
+msgid "Post List Layout"
+msgstr "投稿一覧のレイアウト"
+
+#: keni/module/keni-layout/keni-layout.php:438
+msgid "Default"
+msgstr "デフォルト"
+
+#: keni/module/keni-layout/keni-layout.php:439
+msgid "Card"
+msgstr "カード"
+
+#: keni/module/keni-layout/keni-layout.php:463
+msgid "Setting Layout and Disp Menu"
+msgstr "レイアウトとメニュー表示の設定"
+
+#: keni/module/keni-layout/keni-layout.php:532
+msgid "Number of Column"
+msgstr "カラム数"
+
+#: keni/module/keni-layout/keni-layout.php:533
+msgid "Side Bar"
+msgstr "サイドバー"
+
+#: keni/module/keni-layout/keni-layout.php:537
+msgid "Menu"
+msgstr "メニュー"
+
+#: keni/module/keni-layout/keni-layout.php:538
+msgid "Breadcrumb"
+msgstr "パンくず"
+
+#: keni/module/keni-layout/keni-layout.php:540
+msgid "Valid for 1 Column"
+msgstr "※1カラムのときのみ反映されます"
+
+#: keni/module/keni-post/keni-post.php:9
+msgid "Keni Settings post"
+msgstr "投稿設定"
+
+#: keni/module/keni-post/keni-post.php:86
+msgid "Display Post Date & Update Date"
+msgstr "投稿日と更新日を表示する"
+
+#: keni/module/keni-post/keni-post.php:87
+msgid "Display Update Date"
+msgstr "更新日を表示"
+
+#: keni/module/keni-post/keni-post.php:88
+msgid "Display Post Date"
+msgstr "投稿日を表示"
+
+#: keni/module/keni-post/keni-post.php:107
+#: keni/module/keni-post/keni-post.php:439
+msgid "Category"
+msgstr "カテゴリー"
+
+#: keni/module/keni-post/keni-post.php:113
+#: keni/module/keni-post/keni-post.php:448
+msgid "Tag"
+msgstr "タグ"
+
+#: keni/module/keni-post/keni-post.php:119
+msgid "List Style"
+msgstr "リスト型"
+
+#: keni/module/keni-post/keni-post.php:120
+msgid "Card Style"
+msgstr "カード型"
+
+#: keni/module/keni-post/keni-post.php:157
+msgid "Common Settings"
+msgstr "共通設定"
+
+#: keni/module/keni-post/keni-post.php:179
+msgid "Display Auther information"
+msgstr "投稿者情報を表示する"
+
+#: keni/module/keni-post/keni-post.php:188
+msgid "Display Date"
+msgstr "日付を表示する"
+
+#: keni/module/keni-post/keni-post.php:197
+msgid "Contents after Post"
+msgstr "投稿の後に表示するコンテンツ"
+
+#: keni/module/keni-post/keni-post.php:206
+msgid "Setting Relation Post for Site"
+msgstr "サイト全体の関連記事設定"
+
+#: keni/module/keni-post/keni-post.php:222
+msgid "Thumbnail for Single Post"
+msgstr "投稿最初のアイキャッチ画像表示"
+
+#: keni/module/keni-post/keni-post.php:232
+#: keni/module/keni-post/keni-post.php:1032
+msgid "TOC Display Setting"
+msgstr "目次の表示"
+
+#: keni/module/keni-post/keni-post.php:290
+msgid "Display Page Title"
+msgstr "ページタイトルを表示する"
+
+#: keni/module/keni-post/keni-post.php:361
+msgid "Setting of BreadcrumbList priority"
+msgstr "パンくずの優先度設定"
+
+#: keni/module/keni-post/keni-post.php:417
+msgid "Setting of Relation Post"
+msgstr "関連記事設定"
+
+#: keni/module/keni-post/keni-post.php:428
+#: keni/module/keni-post/keni-post.php:959
+#: keni/module/keni-post/keni-post.php:1048
+#: keni/module/keni-seo/keni-seo.php:192
+msgid "Use Default Setting"
+msgstr "デフォルト設定を使用する"
+
+#: keni/module/keni-post/keni-post.php:603
+msgid "Post Title"
+msgstr "投稿タイトル"
+
+#: keni/module/keni-post/keni-post.php:604
+msgid "Post URL"
+msgstr "投稿URL"
+
+#: keni/module/keni-post/keni-post.php:858
+msgid "Related Posts"
+msgstr "関連記事"
+
+#: keni/module/keni-post/keni-post.php:876
+msgid "CSS/JS for this post"
+msgstr "この投稿のみに表示するCSS / JS"
+
+#: keni/module/keni-post/keni-post.php:943
+msgid "Thumbnail for Single"
+msgstr "投稿最初のアイキャッチ画像表示"
+
+#: keni/module/keni-post/keni-post.php:1283
+msgid "Latest Info"
+msgstr ""
+
+#: keni/module/keni-post/keni-post.php:1285
+msgid "Your blog&#8217;s WordPress Pages"
+msgstr ""
+
+#: keni/module/keni-pv/keni-pv.php:160
+msgid "Popular Posts"
+msgstr "人気記事"
+
+#: keni/module/keni-seo/keni-seo.php:10
+msgid "Keni Settings seo"
+msgstr "SEO設定"
+
+#: keni/module/keni-seo/keni-seo.php:56 keni/module/keni-seo/keni-seo.php:63
+#: keni/module/keni-sns/keni-sns.php:86 keni/module/keni-sns/keni-sns.php:93
+#: keni/module/keni-sns/keni-sns.php:100 keni/module/keni-sns/keni-sns.php:108
+#: keni/module/keni-sns/keni-sns.php:115 keni/module/keni-sns/keni-sns.php:122
+#: keni/module/keni-sns/keni-sns.php:129 keni/module/keni-sns/keni-sns.php:145
+#: keni/module/keni-sns/keni-sns.php:167 keni/module/keni-sns/keni-sns.php:200
+#: keni/module/keni-sns/keni-sns.php:225
+msgid "Disable"
+msgstr "無効にする"
+
+#: keni/module/keni-seo/keni-seo.php:70 keni/module/keni-seo/keni-seo.php:74
+#: keni/module/keni-seo/keni-seo.php:289 keni/module/keni-seo/keni-seo.php:310
+msgid "Enable index"
+msgstr "indexする"
+
+#: keni/module/keni-seo/keni-seo.php:71 keni/module/keni-seo/keni-seo.php:75
+#: keni/module/keni-seo/keni-seo.php:245 keni/module/keni-seo/keni-seo.php:290
+#: keni/module/keni-seo/keni-seo.php:311
+msgid "Enable noindex"
+msgstr "noindexにする"
+
+#: keni/module/keni-seo/keni-seo.php:76 keni/module/keni-seo/keni-seo.php:291
+#: keni/module/keni-seo/keni-seo.php:312
+msgid "Enable noindex page 2 and after"
+msgstr "2ページ目以降をnoindexにする"
+
+#: keni/module/keni-seo/keni-seo.php:126
+msgid "Canonical Setting for Keni"
+msgstr "賢威のカノニカル設定"
+
+#: keni/module/keni-seo/keni-seo.php:128
+msgid ""
+"Notice: If disabled setting, disabled cannonical setting are set each post"
+msgstr ""
+"※ 無効にすると、投稿別に設定した「canonical URL」も適用されなくなります。ご注"
+"意ください。"
+
+#: keni/module/keni-seo/keni-seo.php:137
+msgid "Meta Description Setting for Keni"
+msgstr "賢威のメタディクリプション設定"
+
+#: keni/module/keni-seo/keni-seo.php:148
+msgid "Index settings"
+msgstr "インデックスの設定"
+
+#: keni/module/keni-seo/keni-seo.php:149
+msgid "Archive Index Setting for Page 2 and after"
+msgstr "記事一覧の2ページ目以降のインデックス"
+
+#: keni/module/keni-seo/keni-seo.php:155
+msgid "Date Page"
+msgstr "日付ページ"
+
+#: keni/module/keni-seo/keni-seo.php:157
+msgid "Auther Page"
+msgstr "投稿者ページ"
+
+#: keni/module/keni-seo/keni-seo.php:159
+msgid "Search Result Page"
+msgstr "検索結果ページ"
+
+#: keni/module/keni-seo/keni-seo.php:176
+msgid "Show Site Title in &lt;title&gt;"
+msgstr "サイトタイトルを&lt;title&gt;に表示する"
+
+#: keni/module/keni-seo/keni-seo.php:233 keni/module/keni-seo/keni-seo.php:297
+msgid "index"
+msgstr "index"
+
+#: keni/module/keni-seo/keni-seo.php:288 keni/module/keni-seo/keni-seo.php:309
+msgid "Use Common Setting"
+msgstr "共通設定を使用する"
+
+#: keni/module/keni-seo/keni-seo.php:319
+msgid "Index Setting"
+msgstr "インデックス設定"
+
+#: keni/module/keni-seo/keni-seo.php:478
+msgid "Meta Data (meta description)"
+msgstr "メタデータ（meta description）"
+
+#: keni/module/keni-seo/keni-seo.php:565 keni/module/keni-seo/keni-seo.php:601
+#: keni/module/keni-seo/keni-seo.php:606 keni/module/keni-seo/keni-seo.php:611
+#: keni/module/keni-seo/keni-seo.php:616
+#, php-format
+msgid "Archive List for %s %s %s"
+msgstr "「%s」の記事一覧です%s。%s"
+
+#: keni/module/keni-seo/keni-seo.php:591
+#, php-format
+msgid "%s Archive List for %s %s %s"
+msgstr "%sの「%s」の記事一覧です%s。%s"
+
+#: keni/module/keni-seo/keni-seo.php:595
+#, php-format
+msgid "%s%s"
+msgstr "%s%s"
+
+#: keni/module/keni-seo/keni-seo.php:601
+msgid "Y-n-j"
+msgstr "Y年n月j日"
+
+#: keni/module/keni-seo/keni-seo.php:606
+msgid "Y-n"
+msgstr "Y年n月"
+
+#: keni/module/keni-seo/keni-seo.php:623
+#, php-format
+msgid "Search Result for %s %s %s﻿"
+msgstr "「%s」の検索結果一覧です%s。%s"
+
+#: keni/module/keni-seo/keni-seo.php:632
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "お探しのコンテンツが見つかりませんでした。"
+
+#: keni/module/keni-seo/keni-seo.php:679
+msgid "canonical URL"
+msgstr "canonical URL"
+
+#: keni/module/keni-seo/keni-seo.php:931
+msgid "Another Title"
+msgstr "個別設定タイトル"
+
+#: keni/module/keni-seo/keni-seo.php:1024
+msgid "Check Sheet for Contents Quality"
+msgstr "コンテンツ品質のチェックシート"
+
+#: keni/module/keni-setting/keni-setting.php:7
+msgid "Keni Settings code"
+msgstr "埋め込みコード設定"
+
+#: keni/module/keni-setting/keni-setting.php:142
+#: keni/module/keni-setting/keni-setting.php:168
+msgid "表示する"
+msgstr "表示する"
+
+#: keni/module/keni-setting/keni-setting.php:143
+#: keni/module/keni-setting/keni-setting.php:169
+msgid "表示しない"
+msgstr "表示しない"
+
+#: keni/module/keni-setting/keni-setting.php:220
+msgid "Left"
+msgstr "左"
+
+#: keni/module/keni-setting/keni-setting.php:221
+msgid "Center"
+msgstr "中央"
+
+#: keni/module/keni-setting/keni-setting.php:222
+msgid "Right"
+msgstr "右"
+
+#: keni/module/keni-setting/keni-setting.php:226
+msgid "Embed Code"
+msgstr "埋め込みコード"
+
+#: keni/module/keni-setting/keni-setting.php:227
+msgid "Movie File"
+msgstr "動画ファイル"
+
+#: keni/module/keni-setting/keni-setting.php:231
+msgid "Template Width"
+msgstr "テンプレート幅"
+
+#: keni/module/keni-setting/keni-setting.php:232
+msgid "Browser Width"
+msgstr "ブラウザ幅"
+
+#: keni/module/keni-setting/keni-setting.php:274
+msgid "画像アップロード"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:275
+msgid "モバイル用画像アップロード"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:276
+msgid "リンクURL"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:277
+msgid "外部表示"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:415
+msgid "サイトのタイトル"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:426
+msgid "Display Front Page Title"
+msgstr "トップページに設定された固定ページのタイトル"
+
+#: keni/module/keni-setting/keni-setting.php:433
+msgid "サイトの簡単な説明"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:441
+msgid "ロゴ画像"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:452
+msgid "下層ページの&lt;title&gt;にサイト名を表示"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:462
+msgid "Site Icon"
+msgstr "サイトアイコン"
+
+#: keni/module/keni-setting/keni-setting.php:475
+msgid "Googleアナリティクスタグ"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:482
+msgid "ログイン中のGoogleアナリティクスタグ"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:492
+msgid "スマートフォン向けフッターパネル"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:494
+msgid "コンテンツ"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:517
+msgid "ヘッダーコンテンツ"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:525
+msgid "&lt;/head&gt; 直前に挿入するコード記入欄"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:533
+msgid "&lt;body&gt; 直後に挿入するコード記入欄"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:541
+msgid "&lt;/body&gt; 直前に挿入するコード記入欄"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:549
+msgid "メインビジュアル"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:557
+msgid "Disable WordPress automatic formatting."
+msgstr "WordPressの自動フォーマット設定"
+
+#: keni/module/keni-setting/keni-setting.php:558
+msgid "Disable automatic formatting."
+msgstr "自動フォーマットを無効にする"
+
+#: keni/module/keni-setting/keni-setting.php:565
+msgid "Disable Keni Color Setting"
+msgstr "賢威による色の無効化設定"
+
+#: keni/module/keni-setting/keni-setting.php:566
+msgid "Disable Keni Color CSS"
+msgstr "賢威の色設定によるCSS出力を無効化する"
+
+#: keni/module/keni-setting/keni-setting.php:573
+msgid "CSS Read Setting"
+msgstr "CSSの読み込み設定"
+
+#: keni/module/keni-setting/keni-setting.php:575
+msgid "External Read CSS"
+msgstr "CSSを外部読み込みにする"
+
+#: keni/module/keni-setting/keni-setting.php:576
+msgid "Minify CSS"
+msgstr "CSSを圧縮してヘッダーに書き出す"
+
+#: keni/module/keni-setting/keni-setting.php:587
+msgid "トップページのタイトル"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:974
+msgid "環境に関する情報です。"
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:980
+msgid "サイト名："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:981
+msgid "サイトURL："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:982
+msgid "ホームURL："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:983
+msgid "コンテンツURL："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:984
+msgid "インクルードURL："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:985
+msgid "テンプレートURL："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:986
+msgid "スタイルシートURL："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:992
+msgid "サーバー："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:995
+msgid "WordPress バージョン："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:996
+msgid "PHP バージョン："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:998
+msgid "ブラウザ："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1000
+msgid "サーバーソフト："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1002
+msgid "サーバープロトコル："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1004
+msgid "文字セット："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1006
+msgid "エンコーディング："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1008
+msgid "言語："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1017
+msgid "テーマ名："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1020
+#: keni/module/keni-setting/keni-setting.php:1047
+msgid "バージョン："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1028
+msgid "カテゴリ数："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1031
+msgid "タグ数："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1033
+msgid "ユーザー数："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1044
+msgid "子テーマ名："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1057
+msgid "利用中のプラグイン："
+msgstr ""
+
+#: keni/module/keni-setting/keni-setting.php:1070
+msgid "不具合報告の際には以下の情報を添えてもらうと助かります。"
+msgstr ""
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:172
+msgid "Color Pattern"
+msgstr "カラーパターン"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:176
+msgid "Turquoise"
+msgstr "ターコイズ"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:177
+msgid "Bluegray"
+msgstr "ブルーグレイ"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:178
+msgid "Brown"
+msgstr "ブラウン"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:179
+msgid "Lightblue"
+msgstr "ライトブルー"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:180
+msgid "Pink"
+msgstr "ピンク"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:181
+msgid "Red"
+msgstr "レッド"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:192
+msgid "Color 1"
+msgstr "カラー1"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:204
+msgid "Color 2"
+msgstr "カラー2"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:216
+msgid "Color 3"
+msgstr "カラー3"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:228
+msgid "Color 4"
+msgstr "カラー4"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:240
+msgid "Color 5"
+msgstr "カラー5"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:252
+msgid "Color 6"
+msgstr "カラー6"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:264
+msgid "Sidebar Color"
+msgstr "ウィジェットタイトルの背景色"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:308
+msgid "Color"
+msgstr "色"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:314
+#: keni/module/keni-sitecolor/keni-sitecolor.php:347
+msgid "Text Color"
+msgstr "文字色"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:316
+#: keni/module/keni-sitecolor/keni-sitecolor.php:349
+msgid "Background Color"
+msgstr "背景色"
+
+#: keni/module/keni-sitecolor/keni-sitecolor.php:320
+#: keni/module/keni-sitecolor/keni-sitecolor.php:353
+msgid "Category Name"
+msgstr "カテゴリ名"
+
+#: keni/module/keni-sns/keni-sns.php:16
+msgid "Keni Settings sns"
+msgstr "SNS設定"
+
+#: keni/module/keni-sns/keni-sns.php:136 keni/module/keni-sns/keni-sns.php:152
+msgid "Disp Both"
+msgstr "上下とも表示する"
+
+#: keni/module/keni-sns/keni-sns.php:137 keni/module/keni-sns/keni-sns.php:153
+msgid "Disp Up Only"
+msgstr "上だけ表示する"
+
+#: keni/module/keni-sns/keni-sns.php:138 keni/module/keni-sns/keni-sns.php:154
+msgid "Disp Down Only"
+msgstr "下だけ表示する"
+
+#: keni/module/keni-sns/keni-sns.php:211
+msgid "summary"
+msgstr ""
+
+#: keni/module/keni-sns/keni-sns.php:212
+msgid "summary_large_image"
+msgstr ""
+
+#: keni/module/keni-sns/keni-sns.php:213
+msgid "photo"
+msgstr ""
+
+#: keni/module/keni-sns/keni-sns.php:250
+msgid "OGP Common Image"
+msgstr "OGPの共通画像（アイキャッチがない場合に使用されます）"
+
+#: keni/module/keni-sns/keni-sns.php:261
+msgid "Disable Keni SNS Count Setting"
+msgstr "SNSカウントの表示を無効にする設定"
+
+#: keni/module/keni-sns/keni-sns.php:262
+msgid "Disable Keni SNS Count"
+msgstr "SNSカウントの表示を無効にする"
+
+#: keni/module/keni-sns/keni-sns.php:273
+msgid "Display SNS Setting"
+msgstr "SNSの表示設定"
+
+#: keni/module/keni-sns/keni-sns.php:274
+msgid "Top Page"
+msgstr "トップページ（ホームページに設定したページ）"
+
+#: keni/module/keni-sns/keni-sns.php:276
+msgid "Home Page"
+msgstr "投稿ページに設定したページ"
+
+#: keni/module/keni-sns/keni-sns.php:278
+msgid "Category and Tag Page"
+msgstr "カテゴリとタグページ"
+
+#: keni/module/keni-sns/keni-sns.php:280
+msgid "Posts List Page"
+msgstr "投稿一覧における各投稿毎のSNSボタン"
+
+#: keni/module/keni-sns/keni-sns.php:282
+msgid "Post"
+msgstr "投稿"
+
+#: keni/module/keni-sns/keni-sns.php:287
+msgid "Page"
+msgstr "固定ページ"
+
+#: keni/module/keni-sns/keni-sns.php:302
+msgid "Setting OGP Facebook for Site"
+msgstr "サイト全体のFacebook OGP設定"
+
+#: keni/module/keni-sns/keni-sns.php:303
+msgid "Disp OGP Facebook"
+msgstr "FacebookのOGPを表示する"
+
+#: keni/module/keni-sns/keni-sns.php:305
+msgid "Facebook App ID"
+msgstr "FacebookのApp ID"
+
+#: keni/module/keni-sns/keni-sns.php:307
+#, fuzzy
+#| msgid "Facebook App ID"
+msgid "Facebook App Secret"
+msgstr "FacebookのApp ID"
+
+#: keni/module/keni-sns/keni-sns.php:309
+msgid "Facebook Admins"
+msgstr "Facebook管理者"
+
+#: keni/module/keni-sns/keni-sns.php:311
+msgid "OGP Type"
+msgstr "og:type"
+
+#: keni/module/keni-sns/keni-sns.php:313
+msgid "OGP Locale"
+msgstr "og:locale"
+
+#: keni/module/keni-sns/keni-sns.php:315
+msgid "Facebook OGP Common Image"
+msgstr "OGPの共通画像（アイキャッチがない場合に使用されます）"
+
+#: keni/module/keni-sns/keni-sns.php:326
+msgid "Setting OGP Twitter for Site"
+msgstr "サイト全体のTwitter OGP設定"
+
+#: keni/module/keni-sns/keni-sns.php:327
+msgid "Disp OGP Twitter"
+msgstr "TwitterのOGP表示"
+
+#: keni/module/keni-sns/keni-sns.php:329
+msgid "Twitter Card"
+msgstr "Twitter Cardの設定"
+
+#: keni/module/keni-sns/keni-sns.php:331
+msgid "Twitter Site"
+msgstr "Twitter アカウント（@で始まる）"
+
+#: keni/module/keni-sns/keni-sns.php:333
+msgid "Twitter OGP Common Image"
+msgstr "OGPの共通画像（アイキャッチがない場合に使用されます）"
+
+#: keni/module/keni-widget/keni-widget.php:12
+msgid "【賢威】記事の一覧表示"
+msgstr ""
+
+#: keni/module/keni-widget/keni-widget.php:13
+msgid ""
+"更新日順・投稿日順で記事の一覧表示ができる賢威のカスタムウィジェットです"
+msgstr ""
+
+#: keni/module/keni-widget/keni-widget.php:26
+msgid "最近更新した記事"
+msgstr ""
+
+#: keni/module/keni-widget/keni-widget.php:95
+msgid "タイトル:"
+msgstr ""
+
+#: keni/module/keni-widget/keni-widget.php:106
+msgid "表示カテゴリ:"
+msgstr ""
+
+#: keni/module/keni-widget/keni-widget.php:119
+msgid "除外カテゴリ:"
+msgstr ""
+
+#: keni/module/keni-widget/keni-widget.php:194
+msgid "Recent Posts with Images"
+msgstr "画像つき関連記事"
+
+#: post-types/keni-linkcard-cf.php:6 post-types/keni-linkcard-cf.php:7
+#: post-types/keni-linkcard-cf.php:18
+msgid "賢威リンクカード"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:8
+msgid "賢威リンクカード一覧"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:9
+msgid "新規賢威リンクカードを追加"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:10 post-types/keni_cc.php:10
+msgid "新規追加"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:11
+msgid "新しい賢威リンクカードを追加"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:12
+msgid "賢威リンクカードを編集"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:13
+msgid "賢威リンクカードを表示"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:14
+msgid "賢威リンクカードを検索"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:15
+msgid "賢威リンクカードが見つかりませんでした。"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:16
+msgid "ゴミ箱内に賢威リンクカードが見つかりませんでした。"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:17 post-types/keni_cc.php:17
+msgid "Parent store"
+msgstr ""
+
+#: post-types/keni-linkcard-cf.php:47 post-types/keni-linkcard-cf.php:50
+msgid "Keni linkcard updated."
+msgstr "Keni リンクカードが更新されました。"
+
+#: post-types/keni-linkcard-cf.php:48 post-types/keni_cc.php:47
+msgid "Custom field updated."
+msgstr "カスタムフィールドがアップデートされました。"
+
+#: post-types/keni-linkcard-cf.php:49 post-types/keni_cc.php:48
+msgid "Custom field deleted."
+msgstr "カスタムフィールドが削除されました。"
+
+#. translators: %s: date and time of the revision
+#: post-types/keni-linkcard-cf.php:52
+#, fuzzy, php-format
+#| msgid "Keni cc restored to revision from %s"
+msgid "Keni linkcard restored to revision from %s"
+msgstr "%sからリビジョンに復元されました"
+
+#: post-types/keni-linkcard-cf.php:53
+msgid "Keni linkcard published."
+msgstr "リンクカードが登録されました。"
+
+#: post-types/keni-linkcard-cf.php:54 post-types/keni_cc.php:53
+msgid "Keni cc saved."
+msgstr "共通コンテンツが保存されました。"
+
+#: post-types/keni-linkcard-cf.php:55
+#, fuzzy
+#| msgid "Keni cc updated."
+msgid "Keni linkcard submitted."
+msgstr "Keni ccが更新されました。"
+
+#: post-types/keni-linkcard-cf.php:56
+#, php-format
+msgid "Keni linkcard scheduled for: <strong>%1$s</strong>."
+msgstr ""
+
+#. translators: Publish box date format, see https://secure.php.net/manual/en/function.date.php
+#: post-types/keni-linkcard-cf.php:58 post-types/keni_cc.php:57
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ H:i"
+
+#: post-types/keni-linkcard-cf.php:59
+#, fuzzy
+#| msgid "Keni cc updated."
+msgid "Keni linkcard draft updated."
+msgstr "Keni ccが更新されました。"
+
+#: post-types/keni-linkcard-cf.php:95
+msgid "None"
+msgstr ""
+
+#: post-types/keni_cc.php:6 post-types/keni_cc.php:7 post-types/keni_cc.php:18
+msgid "共通コンテンツ"
+msgstr ""
+
+#: post-types/keni_cc.php:8
+msgid "共通コンテンツ一覧"
+msgstr ""
+
+#: post-types/keni_cc.php:9
+msgid "新規投稿を追加"
+msgstr ""
+
+#: post-types/keni_cc.php:11
+msgid "新しい共通コンテンツを追加"
+msgstr ""
+
+#: post-types/keni_cc.php:12
+msgid "共通コンテンツを編集"
+msgstr ""
+
+#: post-types/keni_cc.php:13
+msgid "共通コンテンツを表示"
+msgstr ""
+
+#: post-types/keni_cc.php:14
+msgid "共通コンテンツを検索"
+msgstr ""
+
+#: post-types/keni_cc.php:15
+msgid "共通コンテンツが見つかりませんでした。"
+msgstr ""
+
+#: post-types/keni_cc.php:16
+msgid "ゴミ箱内に共通コンテンツが見つかりませんでした。"
+msgstr ""
+
+#: post-types/keni_cc.php:46
+#, php-format
+msgid "Keni cc updated. <a target=\"_blank\" href=\"%s\">View keni cc</a>"
+msgstr ""
+"Keni ccが更新されました。 <a target=\"_blank\" href=\"%s\">keni ccを見る</a>"
+
+#: post-types/keni_cc.php:49
+msgid "Keni cc updated."
+msgstr "Keni ccが更新されました。"
+
+#. translators: %s: date and time of the revision
+#: post-types/keni_cc.php:51
+#, php-format
+msgid "Keni cc restored to revision from %s"
+msgstr "%sからリビジョンに復元されました"
+
+#: post-types/keni_cc.php:52
+#, php-format
+msgid "Keni cc published. <a href=\"%s\">View keni cc</a>"
+msgstr "公開しました。<a href=”%s”>表示</a>"
+
+#: post-types/keni_cc.php:54
+#, php-format
+msgid "Keni cc submitted. <a target=\"_blank\" href=\"%s\">Preview keni cc</a>"
+msgstr "送信されました。<a target=\\”_blank\\” href=\\”%s\\”>プレビュー</a>"
+
+#: post-types/keni_cc.php:55
+#, php-format
+msgid ""
+"Keni cc scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
+"\"%2$s\">Preview keni cc</a>"
+msgstr ""
+"<strong>%1$s</strong> にスケジュールされています。<a target=“_blank” href="
+"\"%2$s\">見る"
+
+#: post-types/keni_cc.php:58
+#, php-format
+msgid ""
+"Keni cc draft updated. <a target=\"_blank\" href=\"%s\">Preview keni cc</a>"
+msgstr "下書きを更新しました。<a target=\"_blank\" href=\"%s\">プレビュー"
+
+#: search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr "「%s」の検索結果"
+
+#: template-parts/content-archive.php:31 template-parts/content-search.php:26
+msgid "Read More"
+msgstr "続きを読む"
+
+#: template-parts/content-attachment.php:67 template-parts/content-post.php:117
+msgid "About Auther"
+msgstr "この記事を書いている人"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "見つかりませんでした"
+
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"投稿を公開する準備ができていますか? <a href=\"%s\">こちら</a>から投稿を開始で"
+"きます。"
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"申し訳ありませんが、検索条件に一致するものはありません。別のキーワードでもう"
+"一度お試しください。"
+
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "お探しのページが見つかりませんでした。再度検索してください。"
+
+#: template-parts/content-page.php:53 template-parts/content-post.php:52
+msgid "Tags"
+msgstr "タグ"
+
+#: template-parts/content-post.php:145
+msgid "Auther's Posts"
+msgstr "執筆記事一覧"
+
+#. translators: %s: Name of current post.
+#: template-parts/content.php:28
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/part-entry_status.php:14
+msgid "Update Date"
+msgstr "更新日"
+
+#: template-parts/part-entry_status.php:19
+msgid "Post Date"
+msgstr "公開日"
+
+#. Theme Name of the plugin/theme
+msgid "賢威8.0"
+msgstr "賢威8.0"
+
+#. Theme URI of the plugin/theme
+msgid "https://rider-store.jp/keni/"
+msgstr "https://rider-store.jp/keni/"
+
+#. Description of the plugin/theme
+msgid "賢威8.0 スタンダード版テンプレートです。"
+msgstr "賢威8.0 スタンダード版テンプレートです。"
+
+#. Author of the plugin/theme
+msgid "株式会社ウェブライダー"
+msgstr "株式会社ウェブライダー"
+
+#. Author URI of the plugin/theme
+msgid "https://web-rider.jp/"
+msgstr "https://web-rider.jp/"
+
+#~ msgid "Favicon"
+#~ msgstr "ファビコン"
+
+#~ msgid "Style2"
+#~ msgstr "カード型"
+
+#~ msgid "Search Page"
+#~ msgstr "検索結果ページ"
+
+#~ msgid "Thumbnail for Page"
+#~ msgstr "固定ページのアイキャッチ画像"
+
+#~ msgid "共通設定"
+#~ msgstr "共通設定"
+
+#~ msgid "選択してください"
+#~ msgstr "選択してください"
+
+#~ msgid "選択"
+#~ msgstr "選択"
+
+#~ msgid "画像のみ"
+#~ msgstr "画像のみ"
+
+#~ msgid "背景画像"
+#~ msgstr "背景画像"
+
+#~ msgid "動画"
+#~ msgstr "動画"
+
+#~ msgid "スライダー"
+#~ msgstr "スライダー"
+
+#~ msgid "全画面表示"
+#~ msgstr "全画面表示"
+
+#~ msgid "Disable noindex"
+#~ msgstr "noindexにしない"
+
+#~ msgid "中央"
+#~ msgstr "中央"
+
+#~ msgid "個別ページのアイキャッチ画像"
+#~ msgstr "個別ページのアイキャッチ画像"
+
+#~ msgid "基本設定を適用"
+#~ msgstr "基本設定を適用"
+
+#~ msgid "Keni Settings option"
+#~ msgstr "設定のオプション"
