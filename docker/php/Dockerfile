@@ -32,7 +32,8 @@ RUN chown -R $www_user:www-data /var/www/ \
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer
+RUN mv composer.phar /usr/local/bin/composer && \
+	composer global require hirak/prestissimo
 
 USER ${www_user}
 WORKDIR /var/www/app

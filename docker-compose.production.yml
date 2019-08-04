@@ -3,24 +3,26 @@ services:
    web:
       build:
          context: ./docker/nginx
-         dockerfile: dev.Dockerfile
-      container_name: ay-nginx
-      depends_on:
-      - php
-      volumes:
-      - document-volume:/var/www/app
-      - phpfpm-socket:/var/run
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./docker/nginx/conf.d/default.local.conf:/etc/nginx/conf.d/default.local.conf
-      - ./docker/log/nginx:/var/log/nginx
-      env_file:
-      - ./.env.docker
+         dockerfile: prod.Dockerfile
+      container_name: ay-web
       ports:
       - 8080:80
       - 443:443
+      volumes:
+      - document-volume:/var/www/app
+      - phpfpm-socket:/var/run
+      - ./docker/nginx/nginx.prod.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - ./docker/nginx/conf.d/default.prod.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/log/nginx:/var/log/nginx
+      - ssl-data:/etc/resty-auto-ssl
+      env_file:
+      - ./.env.docker
+      restart: on-failure
+      environment:
+         ALLOWED_DOMAINS: ${server_name}
+         SITES: ${server_name}:8080=web:80
       networks:
       - app-network
-      entrypoint: nginx -g 'daemon off;'
 
    db:
       image: mariadb:10.4
@@ -35,6 +37,7 @@ services:
       - 3306:3306
       networks:
       - app-network
+      restart: always
 
    php:
       build:
@@ -51,15 +54,13 @@ services:
       - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
       env_file:
       - ./.env.docker
-      expose:
-      - 9000
-      - 9001
       environment:
          TIMEZONE: Asia/Tokyo
          LANGUAGE: "Japanese"
          NVM_DIR:
       networks:
       - app-network
+      restart: always
 
 volumes:
    document-volume:
@@ -68,6 +69,7 @@ volumes:
          o: bind
          device: ${PWD}
    phpfpm-socket:
+   ssl-data:
 
 networks:
    app-network:
