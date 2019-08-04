@@ -3,7 +3,7 @@ services:
    web:
       build:
          context: ./docker/nginx
-         dockerfile: prod.Dockerfile
+         dockerfile: Dockerfile.prod
       container_name: ay-web
       ports:
       - 8080:80

@@ -3,8 +3,8 @@ services:
    web:
       build:
          context: ./docker/nginx
-         dockerfile: dev.Dockerfile
-      container_name: ay-nginx
+         dockerfile: Dockerfile.dev
+      container_name: aydev-nginx
       depends_on:
       - php
       volumes:
@@ -24,7 +24,7 @@ services:
 
    db:
       image: mariadb:10.4
-      container_name: ay-mariadb
+      container_name: aydev-mariadb
       volumes:
       - ./docker/mysql/init.d:/docker-entrypoint-initdb.d
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
@@ -43,7 +43,7 @@ services:
             www_password: ${www_password}
             NODE_VERSION: ${NODE_VERSION}
          context: ./docker/php
-      container_name: ay-phpfpm
+      container_name: aydev-php
       volumes:
       - document-volume:/var/www/app:cached
       - phpfpm-socket:/var/run
@@ -55,8 +55,8 @@ services:
       - 9000
       - 9001
       environment:
-         TIMEZONE: Asia/Tokyo
-         LANGUAGE: "Japanese"
+         TIMEZONE: ${TIMEZONE}
+         LANGUAGE: ${LANGUAGE}
          NVM_DIR:
       networks:
       - app-network
