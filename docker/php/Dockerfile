@@ -2,7 +2,7 @@ FROM php:7.2-fpm
 
 # Install extensions
 RUN apt-get update \
-	&& apt-get install -y libicu-dev zip unzip curl zlib1g-dev libpng-dev vim procps git \
+	&& apt-get install -y libicu-dev zip unzip curl zlib1g-dev libpng-dev vim procps iproute2 git \
 	&& docker-php-ext-install intl opcache \
 	&& docker-php-ext-enable intl opcache \
 	&& docker-php-ext-install pdo pdo_mysql mysqli\
