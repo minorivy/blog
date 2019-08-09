@@ -58,7 +58,7 @@ services:
       volumes:
       - document-volume:/var/www/app:cached
       - phpfpm-socket:/var/run
-      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/php/php.prod.ini:/usr/local/etc/php/php.ini
       - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
       env_file:
       - ./.env.docker
