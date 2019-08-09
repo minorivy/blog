@@ -1,0 +1,43 @@
+FROM php:7.2-fpm-alpine
+
+ARG www_user
+ARG www_password
+ARG server_name
+ARG TIMEZONE
+ARG NODE_VERSION
+ENV NVM_DIR $NVM_DIR
+
+# Install extensions
+RUN apk update \
+	&& apk add --no-cache \
+	bash git curl-dev libxml2-dev icu-dev unzip vim \
+	tzdata \
+	freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
+	&& cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
+	&& apk del tzdata \
+	&& docker-php-ext-install intl opcache \
+	&& docker-php-ext-enable intl opcache \
+	&& docker-php-ext-install pdo pdo_mysql mysqli\
+	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
+	&& docker-php-ext-install gd \
+	&& rm -rf /var/cache/apk/*
+
+RUN adduser -s /bin/bash -S $www_user -G www-data \
+	&& echo "${www_user}:${www_password}" | chpasswd
+
+RUN chown -R $www_user:www-data /var/www/ \
+	&& chown -R $www_user:www-data /var/run/ \
+	&& chown -R $www_user:www-data /var/log/
+
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
+
+USER ${www_user}
+WORKDIR /var/www/app
+
+SHELL [ "/bin/bash", "-c" ]
+
+RUN composer global require hirak/prestissimo
+
+COPY ./.bashrc ~/.bashrc

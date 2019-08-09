@@ -38,11 +38,12 @@ services:
 
    php:
       build:
+         context: ./docker/php
+         dockerfile: Dockerfile.dev
          args:
             www_user: ${www_user}
             www_password: ${www_password}
             NODE_VERSION: ${NODE_VERSION}
-         context: ./docker/php
       container_name: aydev-php
       volumes:
       - document-volume:/var/www/app:cached

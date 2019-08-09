@@ -20,9 +20,6 @@ ARG NODE_VERSION
 
 ENV NVM_DIR $NVM_DIR
 
-HEALTHCHECK --interval=5m --timeout=3s \
-  CMD curl -f http://${server_name}:8080/ || exit 1
-
 RUN useradd -ms /bin/bash -g www-data $www_user \
 	&& echo "${www_user}:${www_password}" | chpasswd
 
@@ -32,11 +29,12 @@ RUN chown -R $www_user:www-data /var/www/ \
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer && \
-	composer global require hirak/prestissimo
+RUN mv composer.phar /usr/local/bin/composer
 
 USER ${www_user}
 WORKDIR /var/www/app
+
+RUN composer global require hirak/prestissimo
 
 # install Nodejs
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
