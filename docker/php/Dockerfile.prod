@@ -10,7 +10,7 @@ ENV NVM_DIR $NVM_DIR
 # Install extensions
 RUN apk update \
 	&& apk add --no-cache \
-	bash git curl-dev libxml2-dev icu-dev unzip vim \
+	bash git curl-dev libxml2-dev icu-dev unzip vim shadow \
 	tzdata \
 	freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
 	&& cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
@@ -22,18 +22,20 @@ RUN apk update \
 	&& docker-php-ext-install gd \
 	&& rm -rf /var/cache/apk/*
 
-RUN adduser -s /bin/bash -S $www_user -G www-data \
-	&& echo "${www_user}:${www_password}" | chpasswd
+RUN usermod -s /bin/bash -g 82 www-data \
+	&& echo "www-data:${www_password}" | chpasswd
+# adduser -u 995 -s /bin/bash -S www-data -G www-data \
+#	&& echo "www-data:${www_password}" | chpasswd
 
-RUN chown -R $www_user:www-data /var/www/ \
-	&& chown -R $www_user:www-data /var/run/ \
-	&& chown -R $www_user:www-data /var/log/
+RUN chown -R www-data:www-data /var/www/app/web \
+	&& chown -R www-data:www-data /var/run/ \
+	&& chown -R www-data:www-data /var/log/
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-USER ${www_user}
+USER www-data
 WORKDIR /var/www/app
 
 SHELL [ "/bin/bash", "-c" ]

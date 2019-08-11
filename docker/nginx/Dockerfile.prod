@@ -9,8 +9,19 @@ RUN apk add --no-cache bash tzdata vim \
 	&& apk del tzdata \
 	&& rm -rf /var/cache/apk/*
 
+RUN addgroup -g 82 -S www-data; \
+	adduser -u 82 -D -S www-data -G www-data
+
+RUN test -d /var/www/app || mkdir -p /var/www/app
+RUN chmod 755 -R /var/www/app \
+	&& chgrp -R www-data /var/www/app/web \
+	&& chown -R www-data:www-data /var/run \
+	&& chgrp -R www-data /etc/ssl \
+	&& chgrp -R www-data /usr/local/openresty \
+	&& chgrp -R www-data /etc/resty-auto-ssl \
+	&& chgrp -R www-data /etc/nginx
+
+# USER www-data
+
 HEALTHCHECK --interval=5m --timeout=3s \
   CMD curl -f https://${server_name}/ || exit 1
-
-RUN addgroup -g 1000 -S www-data \
-	&& adduser -u 1000 -D -S -G www-data www-data

@@ -5,6 +5,7 @@ services:
          context: ./docker/nginx
          dockerfile: Dockerfile.prod
          args:
+            www_user: ${www_user}
             server_name: ${server_name}
             TIMEZONE: ${TIMEZONE}
       container_name: ay-web
