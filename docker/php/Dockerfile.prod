@@ -1,6 +1,5 @@
 FROM php:7.2-fpm-alpine
 
-ARG www_user
 ARG www_password
 ARG server_name
 ARG TIMEZONE
@@ -24,10 +23,9 @@ RUN apk update \
 
 RUN usermod -s /bin/bash -g 82 www-data \
 	&& echo "www-data:${www_password}" | chpasswd
-# adduser -u 995 -s /bin/bash -S www-data -G www-data \
-#	&& echo "www-data:${www_password}" | chpasswd
 
 RUN chown -R www-data:www-data /var/www/app/web \
+	&& chown -R www-data:www-data /var/www/app/vendor \
 	&& chown -R www-data:www-data /var/run/ \
 	&& chown -R www-data:www-data /var/log/
 

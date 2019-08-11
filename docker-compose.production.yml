@@ -5,7 +5,6 @@ services:
          context: ./docker/nginx
          dockerfile: Dockerfile.prod
          args:
-            www_user: ${www_user}
             server_name: ${server_name}
             TIMEZONE: ${TIMEZONE}
       container_name: ay-web
@@ -28,7 +27,41 @@ services:
          SITES: ${server_name}=web:80
          LETSENCRYPT_URL: ${LETSENCRYPT_URL}
       networks:
-      - app-network
+         app-network:
+            ipv4_address: 172.30.0.2
+
+   php:
+      build:
+         context: ./docker/php
+         dockerfile: Dockerfile.prod
+         args:
+            www_password: ${www_password}
+            server_name: ${server_name}
+            TIMEZONE: ${TIMEZONE}
+      container_name: ay-phpfpm
+      volumes:
+      - document-volume:/var/www/app:cached
+      - phpfpm-socket:/var/run
+      - ./docker/php/php.prod.ini:/usr/local/etc/php/php.ini
+      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+      env_file:
+      - ./.env.docker
+      environment:
+         TIMEZONE: ${TIMEZONE}
+         LANGUAGE: ${LANGUAGE}
+      networks:
+         app-network:
+            ipv4_address: 172.30.0.3
+      restart: always
+
+   nodejs:
+      image: node:${NODE_VERSION}-alpine
+      container_name: ay-node
+      volumes:
+      - document-volume:/var/www/app:cached
+      networks:
+         app-network:
+      restart: always
 
    db:
       image: mariadb:10.4
@@ -42,43 +75,16 @@ services:
       ports:
       - 3306:3306
       networks:
-      - app-network
+         app-network:
+            ipv4_address: 172.30.0.4
       restart: always
 
-   php:
-      build:
-         context: ./docker/php
-         dockerfile: Dockerfile.prod
-         args:
-            www_user: ${www_user}
-            www_password: ${www_password}
-            server_name: ${server_name}
-            TIMEZONE: ${TIMEZONE}
-            NODE_VERSION: ${NODE_VERSION}
-      container_name: ay-phpfpm
-      volumes:
-      - document-volume:/var/www/app:cached
-      - phpfpm-socket:/var/run
-      - ./docker/php/php.prod.ini:/usr/local/etc/php/php.ini
-      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
-      env_file:
-      - ./.env.docker
-      environment:
-         TIMEZONE: ${TIMEZONE}
-         LANGUAGE: ${LANGUAGE}
-         NVM_DIR:
+   redis:
+      image: redis:5-alpine
+      ports:
+      - 6379:6379
       networks:
-      - app-network
-      restart: always
-
-   nodejs:
-      image: node:${NODE_VERSION}-alpine
-      container_name: ay-node
-      volumes:
-      - document-volume:/var/www/app:cached
-      networks:
-      - app-network
-      restart: always
+         app-network:
 
 volumes:
    document-volume:
