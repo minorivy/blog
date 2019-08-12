@@ -28,7 +28,7 @@ services:
          LETSENCRYPT_URL: ${LETSENCRYPT_URL}
       networks:
          app-network:
-            ipv4_address: 172.30.0.2
+            ipv4_address: 172.30.0.10
 
    php:
       build:
@@ -51,7 +51,7 @@ services:
          LANGUAGE: ${LANGUAGE}
       networks:
          app-network:
-            ipv4_address: 172.30.0.3
+            ipv4_address: 172.30.0.13
       restart: always
 
    nodejs:
@@ -76,7 +76,7 @@ services:
       - 3306:3306
       networks:
          app-network:
-            ipv4_address: 172.30.0.4
+            ipv4_address: 172.30.0.15
       restart: always
 
    redis:
