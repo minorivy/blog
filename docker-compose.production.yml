@@ -8,12 +8,14 @@ services:
             server_name: ${server_name}
             TIMEZONE: ${TIMEZONE}
       container_name: ay-web
+      depends_on:
+      - php
       ports:
       - 80:80
       - 443:443
       volumes:
       - document-volume:/var/www/app
-      - phpfpm-socket:/var/run
+      - phpfpm-socket:/sock
       - ./docker/nginx/nginx.prod.conf:/usr/local/openresty/nginx/conf/nginx.conf
       - ./docker/nginx/conf.d/default.prod.conf:/usr/local/openresty/nginx/conf/server-proxy.conf
       - ./docker/log/nginx:/var/log/nginx
@@ -41,9 +43,9 @@ services:
       container_name: ay-phpfpm
       volumes:
       - document-volume:/var/www/app:cached
-      - phpfpm-socket:/var/run
+      - phpfpm-socket:/sock
       - ./docker/php/php.prod.ini:/usr/local/etc/php/php.ini
-      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zzz-www.conf
       env_file:
       - ./.env.docker
       environment:
@@ -72,6 +74,8 @@ services:
       - ./docker/mysql/data:/var/lib/mysql
       env_file:
       - ./.env.docker
+      depends_on:
+      - php
       ports:
       - 3306:3306
       networks:
@@ -81,6 +85,10 @@ services:
 
    redis:
       image: redis:5-alpine
+      container_name: ay-redis
+      depends_on:
+      - php
+      - db
       ports:
       - 6379:6379
       networks:

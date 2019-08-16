@@ -14,6 +14,9 @@ RUN apk update \
 	freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
 	&& cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
 	&& apk del tzdata \
+	&& docker-php-source extract \
+	&& git clone -b 5.0.2 --depth 1 https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis \
+	&& docker-php-ext-install redis \
 	&& docker-php-ext-install intl opcache \
 	&& docker-php-ext-enable intl opcache \
 	&& docker-php-ext-install pdo pdo_mysql mysqli\
@@ -28,7 +31,6 @@ RUN test -d /var/www/app/web || mkdir -p /var/www/app/web
 RUN test -d /var/www/app/vendor || mkdir -p /var/www/app/vendor
 RUN chown -R www-data:www-data /var/www/app/web \
 	&& chown -R www-data:www-data /var/www/app/vendor \
-	&& chown -R www-data:www-data /var/run/ \
 	&& chown -R www-data:www-data /var/log/
 
 # Install composer

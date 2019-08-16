@@ -12,17 +12,11 @@ RUN apk add --no-cache bash tzdata vim \
 RUN addgroup -g 82 -S www-data; \
 	adduser -u 82 -D -S www-data -G www-data
 
-RUN test -d /var/www/app || mkdir -p /var/www/app; \
-	mkdir /var/www/app/web; mkdir /var/www/app/vendor
-RUN chmod -R 755 /var/www/app \
-	&& chown -R www-data:www-data /var/www/app/web \
-	&& chown -R www-data:www-data /var/www/app/vendor \
-	&& chmod -R 750 /var/run \
-	&& chown -R www-data:www-data /var/run \
-	&& chgrp -R www-data /etc/ssl \
+#RUN chgrp -R www-data /var/run \
+RUN chgrp -R www-data /etc/ssl \
 	&& chgrp -R www-data /usr/local/openresty \
 	&& chgrp -R www-data /etc/resty-auto-ssl \
 	&& chgrp -R www-data /etc/nginx
 
-HEALTHCHECK --interval=5m --timeout=3s \
+HEALTHCHECK --interval=1m --timeout=5s \
   CMD curl -f https://${server_name}/ || exit 1
