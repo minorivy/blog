@@ -1,15 +1,19 @@
 FROM php:7.2-fpm-alpine
 
+ARG www_user
 ARG www_password
 ARG server_name
 ARG TIMEZONE
 ARG NODE_VERSION
+ARG LOCAL_UID
+ARG LOCAL_GID
+ENV www_user $www_user
 ENV NVM_DIR $NVM_DIR
 
 # Install extensions
 RUN apk update \
 	&& apk add --no-cache \
-	bash git curl-dev libxml2-dev icu-dev unzip vim shadow \
+	bash git curl-dev libxml2-dev icu-dev unzip vim shadow su-exec \
 	tzdata \
 	freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
 	&& cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
@@ -24,24 +28,26 @@ RUN apk update \
 	&& docker-php-ext-install gd \
 	&& rm -rf /var/cache/apk/*
 
-RUN usermod -s /bin/bash -g 82 www-data \
-	&& echo "www-data:${www_password}" | chpasswd
+RUN echo "Starting with user: $www_user, UID: $LOCAL_UID, GID: $LOCAL_GID" \
+	&& useradd -K MAIL_DIR=/dev/null -u ${LOCAL_UID} -o -m ${www_user} \
+	&& groupmod -g ${LOCAL_GID} ${www_user} \
+	&& usermod -s /bin/bash -aG www-data ${www_user}
 
 RUN test -d /var/www/app/web || mkdir -p /var/www/app/web
 RUN test -d /var/www/app/vendor || mkdir -p /var/www/app/vendor
-RUN chown -R www-data:www-data /var/www/app/web \
-	&& chown -R www-data:www-data /var/www/app/vendor \
-	&& chown -R www-data:www-data /var/log/
+RUN test -d /sock || mkdir -p /sock
+RUN chown -R $www_user:$www_user /var/www/app/web \
+	&& chown -R $www_user:$www_user /var/www/app/vendor \
+	&& chown -R $www_user:$www_user /var/log/ \
+	&& chown -R $www_user:$www_user /sock
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-USER www-data
+USER ${www_user}
 WORKDIR /var/www/app
-
-SHELL [ "/bin/bash", "-c" ]
 
 RUN composer global require hirak/prestissimo
 
-COPY ./.bashrc ~/.bashrc
+SHELL [ "/bin/bash", "-c" ]

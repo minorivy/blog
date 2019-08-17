@@ -1,22 +1,35 @@
 FROM valian/docker-nginx-auto-ssl
 
+ARG www_user
 ARG server_name
 ARG TIMEZONE
+ARG LOCAL_UID
+ARG LOCAL_GID
+ENV www_user $www_user
+ENV LOCAL_UID $LOCAL_UID
+ENV LOCAL_GID $LOCAL_GID
 
 # Install extensions
-RUN apk add --no-cache bash tzdata vim \
+RUN apk add --no-cache bash tzdata vim su-exec shadow \
 	&& cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
 	&& apk del tzdata \
 	&& rm -rf /var/cache/apk/*
 
-RUN addgroup -g 82 -S www-data; \
-	adduser -u 82 -D -S www-data -G www-data
+RUN echo "Starting with user: $www_user, UID: $LOCAL_UID, GID: $LOCAL_GID" \
+	&& addgroup -g 82 -S www-data \
+	&& useradd -K MAIL_DIR=/dev/null -u ${LOCAL_UID} -o -m ${www_user} \
+	&& groupmod -g ${LOCAL_GID} ${www_user} \
+	&& usermod -s /bin/bash -aG www-data ${www_user}
 
-#RUN chgrp -R www-data /var/run \
-RUN chgrp -R www-data /etc/ssl \
-	&& chgrp -R www-data /usr/local/openresty \
-	&& chgrp -R www-data /etc/resty-auto-ssl \
-	&& chgrp -R www-data /etc/nginx
+RUN chgrp -R $www_user /etc/ssl \
+	&& chgrp -R $www_user /usr/local/openresty \
+	&& chgrp -R $www_user /etc/resty-auto-ssl \
+	&& chgrp -R $www_user /etc/nginx
 
 HEALTHCHECK --interval=1m --timeout=5s \
   CMD curl -f https://${server_name}/ || exit 1
+
+#USER ${www_user}
+WORKDIR /var/www/app
+
+SHELL [ "/bin/bash", "-c" ]

@@ -5,8 +5,11 @@ services:
          context: ./docker/nginx
          dockerfile: Dockerfile.prod
          args:
+            www_user: ${www_user}
             server_name: ${server_name}
             TIMEZONE: ${TIMEZONE}
+            LOCAL_UID: ${LOCAL_UID}
+            LOCAL_GID: ${LOCAL_GID}
       container_name: ay-web
       depends_on:
       - php
@@ -37,15 +40,18 @@ services:
          context: ./docker/php
          dockerfile: Dockerfile.prod
          args:
+            www_user: ${www_user}
             www_password: ${www_password}
             server_name: ${server_name}
             TIMEZONE: ${TIMEZONE}
+            LOCAL_UID: ${LOCAL_UID}
+            LOCAL_GID: ${LOCAL_GID}
       container_name: ay-phpfpm
       volumes:
       - document-volume:/var/www/app:cached
       - phpfpm-socket:/sock
       - ./docker/php/php.prod.ini:/usr/local/etc/php/php.ini
-      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zzz-www.conf
+      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
       env_file:
       - ./.env.docker
       environment:
@@ -84,7 +90,8 @@ services:
       restart: always
 
    redis:
-      image: redis:5-alpine
+      build:
+         context: ./docker/redis
       container_name: ay-redis
       depends_on:
       - php
