@@ -5,15 +5,21 @@ services:
          context: ./docker/nginx
          dockerfile: Dockerfile.prod
          args:
+            www_user: ${www_user}
             server_name: ${server_name}
             TIMEZONE: ${TIMEZONE}
+            LOCAL_UID: ${LOCAL_UID}
+            LOCAL_GID: ${LOCAL_GID}
       container_name: ay-web
+      depends_on:
+      - php
       ports:
       - 80:80
+      - 8083:8083
       - 443:443
       volumes:
       - document-volume:/var/www/app
-      - phpfpm-socket:/var/run
+      - phpfpm-socket:/sock
       - ./docker/nginx/nginx.prod.conf:/usr/local/openresty/nginx/conf/nginx.conf
       - ./docker/nginx/conf.d/default.prod.conf:/usr/local/openresty/nginx/conf/server-proxy.conf
       - ./docker/log/nginx:/var/log/nginx
@@ -24,25 +30,13 @@ services:
       restart: on-failure
       environment:
          ALLOWED_DOMAINS: ${server_name}
-         SITES: ${server_name}=web:80
+         DIFFIE_HELLMAN: ''
+         SITES: ${server_name}=web:8083
+         FORCE_HTTPS: 'true'
          LETSENCRYPT_URL: ${LETSENCRYPT_URL}
       networks:
-      - app-network
-
-   db:
-      image: mariadb:10.4
-      container_name: ay-mariadb
-      volumes:
-      - ./docker/mysql/init.d:/docker-entrypoint-initdb.d
-      - ./docker/mysql/conf.d:/etc/mysql/conf.d
-      - ./docker/mysql/data:/var/lib/mysql
-      env_file:
-      - ./.env.docker
-      ports:
-      - 3306:3306
-      networks:
-      - app-network
-      restart: always
+         app-network:
+            ipv4_address: 172.30.0.10
 
    php:
       build:
@@ -53,11 +47,12 @@ services:
             www_password: ${www_password}
             server_name: ${server_name}
             TIMEZONE: ${TIMEZONE}
-            NODE_VERSION: ${NODE_VERSION}
+            LOCAL_UID: ${LOCAL_UID}
+            LOCAL_GID: ${LOCAL_GID}
       container_name: ay-phpfpm
       volumes:
       - document-volume:/var/www/app:cached
-      - phpfpm-socket:/var/run
+      - phpfpm-socket:/sock
       - ./docker/php/php.prod.ini:/usr/local/etc/php/php.ini
       - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
       env_file:
@@ -65,9 +60,9 @@ services:
       environment:
          TIMEZONE: ${TIMEZONE}
          LANGUAGE: ${LANGUAGE}
-         NVM_DIR:
       networks:
-      - app-network
+         app-network:
+            ipv4_address: 172.30.0.13
       restart: always
 
    nodejs:
@@ -76,8 +71,38 @@ services:
       volumes:
       - document-volume:/var/www/app:cached
       networks:
-      - app-network
+         app-network:
       restart: always
+
+   db:
+      image: mariadb:10.4
+      container_name: ay-mariadb
+      volumes:
+      - ./docker/mysql/init.d:/docker-entrypoint-initdb.d
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      - ./docker/mysql/data:/var/lib/mysql
+      env_file:
+      - ./.env.docker
+      depends_on:
+      - php
+      ports:
+      - 3306:3306
+      networks:
+         app-network:
+            ipv4_address: 172.30.0.15
+      restart: always
+
+   redis:
+      build:
+         context: ./docker/redis
+      container_name: ay-redis
+      depends_on:
+      - php
+      - db
+      ports:
+      - 6379:6379
+      networks:
+         app-network:
 
 volumes:
    document-volume:

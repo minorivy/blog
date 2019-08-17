@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [[ "$1" == "up" ]]; then
-	export $(cat .env.docker | grep -v "^#" | xargs) && docker-compose up -d --build
-fi
-
-if [[ "$1" == "down" ]]; then
-	docker-compose down "$2"
-fi
