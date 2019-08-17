@@ -15,6 +15,7 @@ services:
       - php
       ports:
       - 80:80
+      - 8083:8083
       - 443:443
       volumes:
       - document-volume:/var/www/app
@@ -29,7 +30,9 @@ services:
       restart: on-failure
       environment:
          ALLOWED_DOMAINS: ${server_name}
-         SITES: ${server_name}=web:80
+         DIFFIE_HELLMAN: ''
+         SITES: ${server_name}=web:8083
+         FORCE_HTTPS: 'true'
          LETSENCRYPT_URL: ${LETSENCRYPT_URL}
       networks:
          app-network:
