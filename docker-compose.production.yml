@@ -13,30 +13,31 @@ services:
       container_name: ay-web
       depends_on:
       - php
+      - https
       ports:
       - 80:80
-      - 8083:8083
       - 443:443
       volumes:
       - document-volume:/var/www/app
       - phpfpm-socket:/sock
-      - ./docker/nginx/nginx.prod.conf:/usr/local/openresty/nginx/conf/nginx.conf
-      - ./docker/nginx/conf.d/default.prod.conf:/usr/local/openresty/nginx/conf/server-proxy.conf
+      - ssl-data:/var/lib/https-portal
+      - ./docker/nginx/nginx.prod.conf.template:/etc/nginx/nginx.conf.template
+      - ./docker/nginx/conf.d/prod.conf.template:/etc/nginx/conf.d/web.conf.template
       - ./docker/log/nginx:/var/log/nginx
       - ./docker/nginx/logrotate.d/nginx:/etc/logrotate.d/nginx
-      - ssl-data:/etc/resty-auto-ssl
       env_file:
       - ./.env.docker
       restart: on-failure
-      environment:
-         ALLOWED_DOMAINS: ${server_name}
-         DIFFIE_HELLMAN: ''
-         SITES: ${server_name}=web:8083
-         FORCE_HTTPS: 'true'
-         LETSENCRYPT_URL: ${LETSENCRYPT_URL}
       networks:
          app-network:
             ipv4_address: 172.30.0.10
+      command: >
+            /bin/sh -c
+            "envsubst '$$server_name$$STAGE_ENV' < /etc/nginx/conf.d/web.conf.template > /etc/nginx/conf.d/web.conf
+            && envsubst '$$www_user' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
+            && chown -R ${www_user}:${www_user} /var/lib/https-portal
+            && chmod -R g+wx /var/lib/https-portal
+            && nginx -g 'daemon off;'"
 
    php:
       build:
@@ -54,25 +55,21 @@ services:
       - document-volume:/var/www/app:cached
       - phpfpm-socket:/sock
       - ./docker/php/php.prod.ini:/usr/local/etc/php/php.ini
-      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
       env_file:
       - ./.env.docker
-      environment:
-         TIMEZONE: ${TIMEZONE}
-         LANGUAGE: ${LANGUAGE}
       networks:
          app-network:
             ipv4_address: 172.30.0.13
       restart: always
 
-   nodejs:
-      image: node:${NODE_VERSION}-alpine
-      container_name: ay-node
+   https:
+      image: steveltn/https-portal:1
+      container_name: ay-https
+      environment:
+         DOMAINS: ${server_name} -> http://dockerhost:8080
+         STAGE: ${STAGE_ENV}
       volumes:
-      - document-volume:/var/www/app:cached
-      networks:
-         app-network:
-      restart: always
+      - ssl-data:/var/lib/https-portal
 
    db:
       image: mariadb:10.4
