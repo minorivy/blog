@@ -13,14 +13,11 @@ services:
       container_name: ay-web
       depends_on:
       - php
-      - https
       ports:
-      - 80:80
-      - 443:443
+      - 5000:5000
       volumes:
       - document-volume:/var/www/app
       - phpfpm-socket:/sock
-      - ssl-data:/var/lib/https-portal
       - ./docker/nginx/nginx.prod.conf.template:/etc/nginx/nginx.conf.template
       - ./docker/nginx/conf.d/prod.conf.template:/etc/nginx/conf.d/web.conf.template
       - ./docker/log/nginx:/var/log/nginx
@@ -35,8 +32,6 @@ services:
             /bin/sh -c
             "envsubst '$$server_name$$STAGE_ENV' < /etc/nginx/conf.d/web.conf.template > /etc/nginx/conf.d/web.conf
             && envsubst '$$www_user' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
-            && chown -R ${www_user}:${www_user} /var/lib/https-portal
-            && chmod -R g+wx /var/lib/https-portal
             && nginx -g 'daemon off;'"
 
    php:
@@ -66,10 +61,15 @@ services:
       image: steveltn/https-portal:1
       container_name: ay-https
       environment:
-         DOMAINS: ${server_name} -> http://dockerhost:8080
+         DOMAINS: '${server_name} -> http://web:5000'
          STAGE: ${STAGE_ENV}
-      volumes:
-      - ssl-data:/var/lib/https-portal
+      depends_on: 
+      - web
+      ports: 
+      - 80:80
+      - 443:443
+      networks:
+         app-network:
 
    db:
       image: mariadb:10.4
