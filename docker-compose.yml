@@ -4,14 +4,16 @@ services:
       build:
          context: ./docker/nginx
          dockerfile: Dockerfile.dev
+         args:
+            server_name: ${server_name}
       container_name: aydev-nginx
       depends_on:
       - php
       volumes:
       - document-volume:/var/www/app
-      - phpfpm-socket:/var/run
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./docker/nginx/conf.d/default.local.conf:/etc/nginx/conf.d/default.local.conf
+      - phpfpm-socket:/sock
+      - ./docker/nginx/nginx.conf.template:/etc/nginx/nginx.conf.template
+      - ./docker/nginx/conf.d/default.local.conf.template:/etc/nginx/conf.d/default.conf.template
       - ./docker/log/nginx:/var/log/nginx
       env_file:
       - ./.env.docker
@@ -19,12 +21,18 @@ services:
       - 8080:80
       - 443:443
       networks:
-      - app-network
-      entrypoint: nginx -g 'daemon off;'
+      - dev
+      command: >
+         /bin/sh -c
+         "envsubst '$$server_name' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf
+         && envsubst '$$www_user' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
+         && nginx -g 'daemon off;'"
 
    db:
       image: mariadb:10.4
       container_name: aydev-mariadb
+      depends_on:
+      - php
       volumes:
       - ./docker/mysql/init.d:/docker-entrypoint-initdb.d
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
@@ -34,7 +42,7 @@ services:
       ports:
       - 3306:3306
       networks:
-      - app-network
+      - dev
 
    php:
       build:
@@ -43,13 +51,12 @@ services:
          args:
             www_user: ${www_user}
             www_password: ${www_password}
-            NODE_VERSION: ${NODE_VERSION}
+            server_name: ${server_name}
       container_name: aydev-php
       volumes:
       - document-volume:/var/www/app:cached
-      - phpfpm-socket:/var/run
+      - phpfpm-socket:/sock
       - ./docker/php/php.dev.ini:/usr/local/etc/php/php.ini
-      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
       env_file:
       - ./.env.docker
       expose:
@@ -58,9 +65,8 @@ services:
       environment:
          TIMEZONE: ${TIMEZONE}
          LANGUAGE: ${LANGUAGE}
-         NVM_DIR:
       networks:
-      - app-network
+      - dev
 
 volumes:
    document-volume:
@@ -71,4 +77,4 @@ volumes:
    phpfpm-socket:
 
 networks:
-   app-network:
+   dev:
