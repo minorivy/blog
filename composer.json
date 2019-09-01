@@ -54,7 +54,7 @@
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
-    "wordpress-install-dir": "web/column"
+    "wordpress-install-dir": "web/blog"
   },
   "scripts": {
     "post-root-package-install": [
