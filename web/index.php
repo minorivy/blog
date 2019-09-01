@@ -1,5 +1,12 @@
 <?php
 
-/** WordPress view bootstrapper */
-define('WP_USE_THEMES', true);
-require __DIR__ . '/column/wp-blog-header.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::create(dirname(__DIR__));
+$dotenv->load();
+
+header(
+	join('', ['Location: ', getenv('WP_SITEURL')]),
+	true, 302
+);
+exit;

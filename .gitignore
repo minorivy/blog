@@ -7,7 +7,7 @@ web/app/themes/keni/*
 
 # WordPress
 web/wp/*
-web/column/*
+web/blog/*
 web/.htaccess
 web/app/aiowps_backups/*
 web/app/object-cache.php
