@@ -42,6 +42,7 @@
 	"wpackagist-plugin/disable-json-api": "*",
 	"wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
 	"wpackagist-plugin/redis-cache": "*",
+	"wpackagist-plugin/classic-editor": "*",
 	"wpackagist-plugin/wp-githuber-md": "*"
   },
   "require-dev": {
