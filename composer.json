@@ -41,7 +41,8 @@
 	"roots/wp-password-bcrypt": "1.0.0",
 	"wpackagist-plugin/disable-json-api": "*",
 	"wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
-	"wpackagist-plugin/redis-cache": "*"
+	"wpackagist-plugin/redis-cache": "*",
+	"wpackagist-plugin/wp-githuber-md": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4.2",
