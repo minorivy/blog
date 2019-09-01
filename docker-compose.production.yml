@@ -14,29 +14,25 @@ services:
       depends_on:
       - php
       ports:
-      - 80:80
-      - 8083:8083
-      - 443:443
+      - 5000:5000
       volumes:
       - document-volume:/var/www/app
       - phpfpm-socket:/sock
-      - ./docker/nginx/nginx.prod.conf:/usr/local/openresty/nginx/conf/nginx.conf
-      - ./docker/nginx/conf.d/default.prod.conf:/usr/local/openresty/nginx/conf/server-proxy.conf
+      - ./docker/nginx/nginx.prod.conf.template:/etc/nginx/nginx.conf.template
+      - ./docker/nginx/conf.d/prod.conf.template:/etc/nginx/conf.d/web.conf.template
       - ./docker/log/nginx:/var/log/nginx
       - ./docker/nginx/logrotate.d/nginx:/etc/logrotate.d/nginx
-      - ssl-data:/etc/resty-auto-ssl
       env_file:
       - ./.env.docker
       restart: on-failure
-      environment:
-         ALLOWED_DOMAINS: ${server_name}
-         DIFFIE_HELLMAN: ''
-         SITES: ${server_name}=web:8083
-         FORCE_HTTPS: 'true'
-         LETSENCRYPT_URL: ${LETSENCRYPT_URL}
       networks:
          app-network:
             ipv4_address: 172.30.0.10
+      command: >
+            /bin/sh -c
+            "envsubst '$$server_name$$STAGE_ENV' < /etc/nginx/conf.d/web.conf.template > /etc/nginx/conf.d/web.conf
+            && envsubst '$$www_user' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
+            && nginx -g 'daemon off;'"
 
    php:
       build:
@@ -54,25 +50,26 @@ services:
       - document-volume:/var/www/app:cached
       - phpfpm-socket:/sock
       - ./docker/php/php.prod.ini:/usr/local/etc/php/php.ini
-      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
       env_file:
       - ./.env.docker
-      environment:
-         TIMEZONE: ${TIMEZONE}
-         LANGUAGE: ${LANGUAGE}
       networks:
          app-network:
             ipv4_address: 172.30.0.13
       restart: always
 
-   nodejs:
-      image: node:${NODE_VERSION}-alpine
-      container_name: ay-node
-      volumes:
-      - document-volume:/var/www/app:cached
+   https:
+      image: steveltn/https-portal:1
+      container_name: ay-https
+      environment:
+         DOMAINS: '${server_name} -> http://web:5000'
+         STAGE: ${STAGE_ENV}
+      depends_on: 
+      - web
+      ports: 
+      - 80:80
+      - 443:443
       networks:
          app-network:
-      restart: always
 
    db:
       image: mariadb:10.4

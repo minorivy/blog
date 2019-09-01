@@ -13,7 +13,7 @@ ENV NVM_DIR $NVM_DIR
 # Install extensions
 RUN apk update \
 	&& apk add --no-cache \
-	bash git curl-dev libxml2-dev icu-dev unzip vim shadow su-exec \
+	bash git curl-dev libxml2-dev icu-dev unzip vim shadow gettext \
 	tzdata \
 	freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
 	&& cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
@@ -28,6 +28,9 @@ RUN apk update \
 	&& docker-php-ext-install gd \
 	&& rm -rf /var/cache/apk/*
 
+COPY ./www.conf.template /usr/local/etc/php-fpm.d/zz-docker.conf.template
+RUN envsubst '$$www_user' < /usr/local/etc/php-fpm.d/zz-docker.conf.template > /usr/local/etc/php-fpm.d/zz-docker.conf
+
 RUN echo "Starting with user: $www_user, UID: $LOCAL_UID, GID: $LOCAL_GID" \
 	&& useradd -K MAIL_DIR=/dev/null -u ${LOCAL_UID} -o -m ${www_user} \
 	&& groupmod -g ${LOCAL_GID} ${www_user} \
@@ -39,7 +42,8 @@ RUN test -d /sock || mkdir -p /sock
 RUN chown -R $www_user:$www_user /var/www/app/web \
 	&& chown -R $www_user:$www_user /var/www/app/vendor \
 	&& chown -R $www_user:$www_user /var/log/ \
-	&& chown -R $www_user:$www_user /sock
+	&& chown -R $www_user:$www_user /sock \
+	&& chown -R $www_user:$www_user /usr/local/etc/php-fpm.d/
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php
