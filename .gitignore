@@ -1,9 +1,9 @@
 # Application
 web/app/plugins/*
-!web/app/plugins/.gitkeep
 web/app/mu-plugins/*/
 web/app/upgrade
 web/app/uploads/*
+web/app/themes/keni/*
 
 # WordPress
 web/wp/*
@@ -23,6 +23,9 @@ web/app/object-cache.php
 
 # WP-CLI
 wp-cli.local.yml
+
+# track empty directory with Git
+!.gitkeep
 
 # IDE Settings
 /.idea/
