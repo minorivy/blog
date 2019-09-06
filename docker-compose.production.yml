@@ -61,7 +61,7 @@ services:
       image: steveltn/https-portal:1
       container_name: ay-https
       environment:
-         DOMAINS: '${server_name} -> http://web:5000'
+         DOMAINS: '${server_name} -> http://web:5000/'
          STAGE: ${STAGE_ENV}
       depends_on: 
       - web
