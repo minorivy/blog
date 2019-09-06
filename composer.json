@@ -42,6 +42,7 @@
 	"wpackagist-plugin/disable-json-api": "*",
 	"wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
 	"wpackagist-plugin/redis-cache": "*",
+	"wpackagist-plugin/classic-editor": "*",
 	"wpackagist-plugin/wp-githuber-md": "*"
   },
   "require-dev": {
@@ -54,7 +55,7 @@
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
-    "wordpress-install-dir": "web/column"
+    "wordpress-install-dir": "web/blog"
   },
   "scripts": {
     "post-root-package-install": [
