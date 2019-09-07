@@ -8,7 +8,7 @@ if (str_replace('?'.$_SERVER['QUERY_STRING'], '', $_SERVER['REQUEST_URI']) === '
 	$dotenv->load();
 
 	header(
-		join('', ['Location: ', getenv('WP_SITEURL'), '/']),
+		join('', ['Location: ', getenv('WP_SITEURL')]),
 		true, 302
 	);
 	exit;
