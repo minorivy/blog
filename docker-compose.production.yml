@@ -13,6 +13,11 @@ services:
       container_name: ay-web
       depends_on:
       - php
+      logging:
+         driver: "json-file"
+         options:
+            max-size: "200k"
+            max-file: "20"
       ports:
       - 5000:5000
       volumes:
@@ -20,8 +25,6 @@ services:
       - phpfpm-socket:/sock
       - ./docker/nginx/nginx.prod.conf.template:/etc/nginx/nginx.conf.template
       - ./docker/nginx/conf.d/prod.conf.template:/etc/nginx/conf.d/web.conf.template
-      - ./docker/log/nginx:/var/log/nginx
-      - ./docker/nginx/logrotate.d/nginx:/etc/logrotate.d/nginx
       env_file:
       - ./.env.docker
       restart: on-failure
@@ -46,6 +49,11 @@ services:
             LOCAL_UID: ${LOCAL_UID}
             LOCAL_GID: ${LOCAL_GID}
       container_name: ay-phpfpm
+      logging:
+         driver: "json-file"
+         options:
+            max-size: "200k"
+            max-file: "20"
       volumes:
       - document-volume:/var/www/app:cached
       - phpfpm-socket:/sock
@@ -63,9 +71,9 @@ services:
       environment:
          DOMAINS: '${server_name} -> http://web:5000/'
          STAGE: ${STAGE_ENV}
-      depends_on: 
+      depends_on:
       - web
-      ports: 
+      ports:
       - 80:80
       - 443:443
       networks:
@@ -74,6 +82,11 @@ services:
    db:
       image: mariadb:10.4
       container_name: ay-mariadb
+      logging:
+         driver: "json-file"
+         options:
+            max-size: "200k"
+            max-file: "10"
       volumes:
       - ./docker/mysql/init.d:/docker-entrypoint-initdb.d
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
@@ -93,6 +106,11 @@ services:
       build:
          context: ./docker/redis
       container_name: ay-redis
+      logging:
+         driver: "json-file"
+         options:
+            max-size: "200k"
+            max-file: "20"
       depends_on:
       - php
       - db
