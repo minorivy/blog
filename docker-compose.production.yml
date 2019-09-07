@@ -106,6 +106,7 @@ services:
       build:
          context: ./docker/redis
       container_name: ay-redis
+      command: /bin/sh -c "redis-server /usr/local/etc/redis/redis.conf"
       logging:
          driver: "json-file"
          options:
