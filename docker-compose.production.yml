@@ -105,6 +105,8 @@ services:
    redis:
       build:
          context: ./docker/redis
+         args:
+            TIMEZONE: ${TIMEZONE}
       container_name: ay-redis
       command: /bin/sh -c "redis-server /usr/local/etc/redis/redis.conf"
       logging:
