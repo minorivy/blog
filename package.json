@@ -12,10 +12,10 @@
 		}
 	},
 	"scripts": {
-		"sass:build": "node-sass --omit-source-map-url -r ./resources/sass/ --output-style compressed --indent-type tab -o ./web/app/ --omit-source-map",
+		"sass:build": "node-sass --omit-source-map-url -r ./resources/sass/ --output-style compressed --indent-type tab -o ./web/blog/app/ --omit-source-map",
 		"uglify:build": "parallelshell uglifyjs-folder ./path/ -eo ./path/ -x .js",
-		"imgemin": "imagemin web/app/uploads/* -o web/app/uploads/ -p pngquant",
-		"watch:sass": "node-sass -w --omit-source-map-url -r ./resources/sass/ --output-style compressed --indent-type tab -o ./web/app/ --omit-source-map",
+		"imgemin": "imagemin web/blog/app/uploads/* -o web/blog/app/uploads/ -p pngquant",
+		"watch:sass": "node-sass -w --omit-source-map-url -r ./resources/sass/ --output-style compressed --indent-type tab -o ./web/blog/app/ --omit-source-map",
 		"watch:js": "npm-watch uglify:build",
 		"watch:all": "parallelshell \"npm run watch:sass\" \"npm run watch:js\""
 	},
