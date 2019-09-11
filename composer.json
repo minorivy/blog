@@ -41,6 +41,7 @@
 	"roots/wp-password-bcrypt": "1.0.0",
 	"wpackagist-plugin/disable-json-api": "*",
 	"wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
+	"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
 	"wpackagist-plugin/redis-cache": "*",
 	"wpackagist-plugin/classic-editor": "*",
 	"wpackagist-plugin/wp-githuber-md": "*"
