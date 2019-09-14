@@ -44,7 +44,8 @@
 	"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
 	"wpackagist-plugin/redis-cache": "*",
 	"wpackagist-plugin/classic-editor": "*",
-	"wpackagist-plugin/wp-githuber-md": "*"
+	"wpackagist-plugin/wp-githuber-md": "*",
+	"wpackagist-plugin/tiny-compress-images": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4.2",

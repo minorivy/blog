@@ -69,17 +69,21 @@ services:
       image: steveltn/https-portal:1
       container_name: ay-https
       environment:
-         DOMAINS: '${server_name} -> http://web:5000/'
+         DOMAINS: '${server_name} -> http://web:5000'
          STAGE: ${STAGE_ENV}
          WORKER_PROCESSES: "auto"
          WORKER_CONNECTIONS: 2048
          PROXY_BUFFERS: "16 4k"
          PROXY_BUFFER_SIZE: "16k"
+         RESOLVER: "${RESOLVER} ipv6=off valid=30s"
+         DYNAMIC_UPSTREAM: "true"
       depends_on:
       - web
       ports:
       - 80:80
       - 443:443
+      volumes:
+      - ./docker/nginx/default.ssl.conf.erb:/var/lib/nginx-conf/${server_name}.ssl.conf.erb:ro
       networks:
          app-network:
 
