@@ -1,20 +1,80 @@
-@charset "UTF-8";
+@charset "UTF-8"
 
 /* Colors */
 $color-main: #05a5ab
 
+/* Mixins */
+@mixin top_border
+	border-top: 2px solid $color-main
+
+
 /* # Header */
 .keni-header_wrap
+	@include top_border
 	background-image: none
-	border-top: 2px solid $color-main
 .site-title
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 	font-weight: normal
 	letter-spacing: 1px
+.site-description
+	font-size: 1.2rem
 
-/* # Content */
+/* Footer */
+
+/* # Content --archive */
+.archive_title
+	@include top_border
+	background-image: none
+
+/* # Content -- post */
 
 /* ## Posts */
 .keni-section
 	h1
+		@include top_border
 		background-image: none
+
+// profile under the post
+%sns-follow-btn
+	display: inline-block
+	width: 25px
+	height: 25px
+	margin-bottom: 4px
+	border-radius: 4px
+	overflow: hidden
+	vertical-align: middle
+	text-align: center
+.sns-follow-btn
+	&_github
+		@extend %sns-follow-btn
+		background-color: #0629ce
+		> a
+			color: #fff
+
+/* Widgets */
+
+// profile widget
+.mnr_profile_widget
+	&__author_name
+		font-size: 1.8rem
+		font-weight: 600
+		text-align: center
+	&__description
+		font-size: 1.3rem
+
+/* Profile box */
+.profile-box-thumb
+	&--center
+		float: none
+		margin-right: auto
+
+
+/* switch style between multiple devices */
+@media (min-width : 1200px)
+	.article-visual
+		margin-left: -40px
+		margin-right: -40px
+
+@media (min-width : 768px)
+	.site-description
+		font-size: 1.3rem

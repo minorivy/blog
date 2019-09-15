@@ -1,7 +1,23 @@
 <?php
+/**
+ * keni child theme functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package keni
+ */
 
-function aytc_scripts() {
-	wp_dequeue_style('my-keni_base_default');
-	wp_dequeue_style('keni-style-css');
+$dirs = [
+	'core/posts/*.php',
+	'core/queues/*.php',
+	'core/user/*.php',
+	'core/widgets/*.php',
+];
+
+foreach($dirs as $dir)
+{
+	foreach(glob(__DIR__.'/'.$dir, GLOB_BRACE) as $file)
+	{
+		require $file;
+	}
 }
-add_action('wp_print_styles', 'aytc_scripts');
