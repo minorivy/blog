@@ -16,7 +16,7 @@ $dirs = [
 
 foreach($dirs as $dir)
 {
-	foreach(glob(__DIR__.'/'.$dir, GLOB_BRACE) as $file)
+	foreach(glob(__DIR__.'/'.$dir) as $file)
 	{
 		require $file;
 	}
