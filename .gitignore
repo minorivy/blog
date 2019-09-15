@@ -5,6 +5,7 @@ web/wp/*
 web/blog/*
 web/blog/wp-*/*
 !web/blog/app/
+web/blog/app/languages/*
 web/blog/app/plugins/*
 web/blog/app/mu-plugins/*/
 web/blog/app/upgrade
