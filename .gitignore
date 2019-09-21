@@ -43,3 +43,6 @@ docker/mysql/data/*
 
 # node modules
 node_modules
+
+# logs
+yarn-error.log
