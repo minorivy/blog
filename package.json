@@ -1,32 +1,17 @@
 {
-	"name": "sass-uglify-env",
-	"description": "sass env",
+	"name": "minorivy-frontend",
+	"description": "Frontend env for minorivy",
 	"authors": "xentok",
-	"version": "1.2.0",
+	"version": "2.0.0",
 	"repository": {},
 	"license": "MIT",
-	"watch": {
-		"uglify:build": {
-			"patterns": [],
-			"extensions": "js"
-		}
-	},
 	"scripts": {
 		"sass:build": "node-sass --omit-source-map-url -r ./resources/sass/ --output-style compressed --indent-type tab -o ./web/blog/app/ --omit-source-map",
-		"uglify:build": "parallelshell uglifyjs-folder ./path/ -eo ./path/ -x .js",
-		"imgemin": "imagemin web/blog/app/uploads/* -o web/blog/app/uploads/ -p pngquant",
-		"watch:sass": "node-sass -w --omit-source-map-url -r ./resources/sass/ --output-style compressed --indent-type tab -o ./web/blog/app/ --omit-source-map",
-		"watch:js": "npm-watch uglify:build",
-		"watch:all": "parallelshell \"npm run watch:sass\" \"npm run watch:js\""
+		"watch:sass": "node-sass -w --omit-source-map-url -r ./resources/sass/ --output-style compressed --indent-type tab -o ./web/blog/app/ --omit-source-map"
 	},
 	"devDependencies": {
 		"autoprefixer": "*",
 		"browserslist": "*",
-		"node-sass": "*",
-		"npm-watch": "*",
-		"parallelshell": "^3.0.2",
-		"postcss-cli": "*",
-		"uglify-js": "*",
-		"uglifyjs-folder": "*"
+		"node-sass": "*"
 	}
 }
