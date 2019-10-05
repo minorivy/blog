@@ -45,7 +45,8 @@
 	"wpackagist-plugin/redis-cache": "*",
 	"wpackagist-plugin/classic-editor": "*",
 	"wpackagist-plugin/wp-githuber-md": "*",
-	"wpackagist-plugin/tiny-compress-images": "*"
+	"wpackagist-plugin/tiny-compress-images": "*",
+  "wpackagist-plugin/www-xml-sitemap-generator-org": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4.2",
