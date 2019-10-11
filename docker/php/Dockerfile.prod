@@ -16,6 +16,7 @@ RUN apk update \
 	bash git curl-dev libxml2-dev icu-dev unzip vim shadow gettext \
 	tzdata \
 	freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
+	mailx ssmtp \
 	&& cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
 	&& apk del tzdata \
 	&& docker-php-source extract \
@@ -30,6 +31,8 @@ RUN apk update \
 
 COPY ./www.conf.template /usr/local/etc/php-fpm.d/zz-docker.conf.template
 RUN envsubst '$$www_user' < /usr/local/etc/php-fpm.d/zz-docker.conf.template > /usr/local/etc/php-fpm.d/zz-docker.conf
+
+COPY ./ssmtp.conf /etc/ssmtp/ssmtp.conf
 
 RUN echo "Starting with user: $www_user, UID: $LOCAL_UID, GID: $LOCAL_GID" \
 	&& useradd -K MAIL_DIR=/dev/null -u ${LOCAL_UID} -o -m ${www_user} \
