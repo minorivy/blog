@@ -5,7 +5,7 @@ ARG www_user
 
 # Install extensions
 RUN apt-get update \
-	&& apt-get install -y libicu-dev zip unzip curl zlib1g-dev libpng-dev vim procps iproute2 git gettext-base \
+	&& apt-get install -y libicu-dev zip unzip curl zlib1g-dev libpng-dev vim procps iproute2 git gettext-base ssmtp \
 	&& docker-php-ext-install intl opcache \
 	&& docker-php-ext-enable intl opcache \
 	&& docker-php-ext-install pdo pdo_mysql mysqli\
@@ -14,6 +14,8 @@ RUN apt-get update \
 	&& docker-php-ext-enable xdebug \
 	&& docker-php-ext-install gd \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY ./ssmtp.conf /etc/ssmtp/ssmtp.conf
 
 COPY ./www.conf.template /usr/local/etc/php-fpm.d/zz-docker.conf.template
 RUN envsubst '$$www_user' < /usr/local/etc/php-fpm.d/zz-docker.conf.template > /usr/local/etc/php-fpm.d/zz-docker.conf
