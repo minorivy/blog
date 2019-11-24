@@ -5,7 +5,7 @@ ARG www_user
 
 # Install extensions
 RUN apt-get update \
-	&& apt-get install -y libicu-dev zip unzip curl zlib1g-dev libpng-dev vim procps iproute2 git gettext-base ssmtp \
+	&& apt-get install -y libicu-dev zip unzip curl zlib1g-dev libpng-dev vim procps iproute2 git gettext-base msmtp \
 	&& docker-php-ext-install intl opcache \
 	&& docker-php-ext-enable intl opcache \
 	&& docker-php-ext-install pdo pdo_mysql mysqli\

@@ -19,7 +19,6 @@ services:
       - ./.env.docker
       ports:
       - 8080:80
-      - 443:443
       networks:
       - dev
       command: >
