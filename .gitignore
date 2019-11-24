@@ -11,6 +11,7 @@ web/blog/app/mu-plugins/*/
 web/blog/app/upgrade
 web/blog/app/uploads/*
 web/blog/app/themes/keni/*
+web/blog/app/themes/twenty*/*
 web/blog/app/aiowps_backups/*
 web/blog/app/object-cache.php
 
