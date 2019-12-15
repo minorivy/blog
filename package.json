@@ -1,10 +1,6 @@
 {
-	"name": "minorivy-frontend",
-	"description": "Frontend env for minorivy",
-	"authors": "xentok",
-	"version": "2.0.0",
+	"private": true,
 	"repository": {},
-	"license": "MIT",
 	"scripts": {
 		"sass:build": "node-sass --omit-source-map-url -r ./resources/sass/ --output-style compressed --indent-type tab -o ./web/blog/app/ --omit-source-map",
 		"watch:sass": "node-sass -w --omit-source-map-url -r ./resources/sass/ --output-style compressed --indent-type tab -o ./web/blog/app/ --omit-source-map"

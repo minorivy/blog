@@ -19,7 +19,6 @@ services:
       - ./.env.docker
       ports:
       - 8080:80
-      - 443:443
       networks:
       - dev
       command: >
@@ -50,8 +49,11 @@ services:
          dockerfile: Dockerfile.dev
          args:
             www_user: ${www_user}
-            www_password: ${www_password}
             server_name: ${server_name}
+            MAIL_USER: ${MAIL_USER}
+            MAIL_PASSWORD: ${MAIL_PASSWORD}
+            MAIL_HUB: ${MAIL_HUB}
+            MAIL_PORT: ${MAIL_PORT}
       container_name: aydev-php
       volumes:
       - document-volume:/var/www/app:cached
@@ -60,6 +62,7 @@ services:
       env_file:
       - ./.env.docker
       expose:
+      - 465
       - 9000
       - 9001
       environment:

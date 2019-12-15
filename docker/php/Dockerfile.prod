@@ -9,6 +9,10 @@ ARG LOCAL_UID
 ARG LOCAL_GID
 ENV www_user $www_user
 ENV NVM_DIR $NVM_DIR
+ARG MAIL_USER
+ARG MAIL_PASSWORD
+ARG MAIL_HUB
+ARG MAIL_PORT
 
 # Install extensions
 RUN apk update \
@@ -16,6 +20,7 @@ RUN apk update \
 	bash git curl-dev libxml2-dev icu-dev unzip vim shadow gettext \
 	tzdata \
 	freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
+	mailx msmtp \
 	&& cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
 	&& apk del tzdata \
 	&& docker-php-source extract \
@@ -30,6 +35,9 @@ RUN apk update \
 
 COPY ./www.conf.template /usr/local/etc/php-fpm.d/zz-docker.conf.template
 RUN envsubst '$$www_user' < /usr/local/etc/php-fpm.d/zz-docker.conf.template > /usr/local/etc/php-fpm.d/zz-docker.conf
+
+COPY ./msmtprc /etc/msmtprc.tpl
+RUN envsubst '$$MAIL_USER$$$MAIL_PASSWORD$$MAIL_HUB$$MAIL_PORT' < /etc/msmtprc.tpl > /etc/msmtprc
 
 RUN echo "Starting with user: $www_user, UID: $LOCAL_UID, GID: $LOCAL_GID" \
 	&& useradd -K MAIL_DIR=/dev/null -u ${LOCAL_UID} -o -m ${www_user} \
