@@ -48,6 +48,10 @@ services:
             TIMEZONE: ${TIMEZONE}
             LOCAL_UID: ${LOCAL_UID}
             LOCAL_GID: ${LOCAL_GID}
+            MAIL_USER: ${MAIL_USER}
+            MAIL_PASSWORD: ${MAIL_PASSWORD}
+            MAIL_HUB: ${MAIL_HUB}
+            MAIL_PORT: ${MAIL_PORT}
       container_name: ay-phpfpm
       logging:
          driver: "json-file"
