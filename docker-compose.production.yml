@@ -67,6 +67,8 @@ services:
       networks:
          app-network:
             ipv4_address: 172.30.0.13
+      expose:
+         - 465
       restart: always
 
    https:
