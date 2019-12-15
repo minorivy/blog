@@ -1,8 +1,9 @@
 @charset "UTF-8"
 
 /* Colors */
-$color-main: #05a5ab
-$color-second: #06C5CC
+$turquoise-main: #05a5ab
+$turquoise-hover: #f5f8fa
+$turquoise-bright: #06C5CC
 
 /* Fonts */
 $font-title: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
@@ -10,7 +11,10 @@ $font-code: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace
 
 /* Mixins */
 @mixin top_border
-	border-top: 2px solid $color-main
+	border-top: 2px solid $turquoise-main
+
+@mixin transition
+	transition: all 0.3s ease-out
 
 /* General */
 code, pre, tt
@@ -46,7 +50,37 @@ code, pre, tt
 		@include top_border
 		background-image: none
 	.sub-section_title
-		background-color: $color-second
+		background-color: $turquoise-bright
+
+.article-body
+	ul, ol
+		background-color: $turquoise-hover
+		border: dashed 1px $turquoise-main
+		margin-left: 0
+		padding: 2em 3em
+		> li
+			text-indent: 1em
+
+/* table of contents */
+.article-body
+	.toc-area_list
+		background-color: transparent
+		border: none
+		ol, ul
+			background-color: transparent
+			border: none
+			margin-left: 5px
+			padding: 0
+		li
+			text-indent: 0
+
+/* ## Contents Elements */
+.keni-link-card_wrap
+	@include transition
+	margin-bottom: 2.0em
+	&:hover
+		border-color: $turquoise-main
+		background-color: $turquoise-hover
 
 // profile under the post
 %sns-follow-btn
@@ -71,7 +105,7 @@ code, pre, tt
 .widget_recent_entries_img03
 	.list_widget_recent_entries_img
 		li
-			transition: all 0.3s ease-out
+			@include transition
 			&:hover
 				opacity: .8
 
@@ -100,3 +134,8 @@ code, pre, tt
 @media (min-width : 768px)
 	.site-description
 		font-size: 1.3rem
+	.article-body
+		ul, ol
+			padding: 2em 1.5em
+			> li
+				text-indent: 1em
